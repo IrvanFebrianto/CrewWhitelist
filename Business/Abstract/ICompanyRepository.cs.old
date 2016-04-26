@@ -1,0 +1,20 @@
+﻿using Business.Entities;
+using Business.Infrastructure;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Common.Enums;
+
+namespace Business.Abstract
+{
+    public interface ICompanyRepository
+    {
+        List<company> Find(int? skip = null, int? take = null, List<SortingInfo> sortings = null, FilterInfo filters = null);
+        company FindByPk(int id);
+        int Count(FilterInfo filters);
+        void Save(company dbItem);
+        void Delete(company dbItem);
+    }
+}

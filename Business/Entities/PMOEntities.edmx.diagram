@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0fa6dcaecd5c44acb6e6e4f81d71064c" Name="Diagram1">
+        <EntityTypeShape EntityType="ditgas_pmoModel.action_plan_progress" Width="1.5" PointX="12.75" PointY="71" IsExpanded="true" />
+        <EntityTypeShape EntityType="ditgas_pmoModel.company" Width="1.5" PointX="0.75" PointY="38.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ditgas_pmoModel.company_user" Width="1.5" PointX="3" PointY="36.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ditgas_pmoModel.contractor" Width="1.5" PointX="0.75" PointY="42.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ditgas_pmoModel.fid_item" Width="1.5" PointX="8.25" PointY="24" IsExpanded="true" />
+        <EntityTypeShape EntityType="ditgas_pmoModel.incident_report" Width="1.5" PointX="8.25" PointY="35.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ditgas_pmoModel.leading_indicator" Width="1.5" PointX="8.25" PointY="32.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ditgas_pmoModel.m_investment" Width="1.5" PointX="5.25" PointY="32" IsExpanded="true" />
+        <EntityTypeShape EntityType="ditgas_pmoModel.m_investment_actual" Width="1.5" PointX="5.25" PointY="34.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ditgas_pmoModel.m_investment_prognosis" Width="1.5" PointX="7.5" PointY="28.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ditgas_pmoModel.m_investment_prognosis_period" Width="1.5" PointX="5.25" PointY="28.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ditgas_pmoModel.m_project" Width="1.5" PointX="3" PointY="39.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ditgas_pmoModel.m_project_gallery" Width="1.5" PointX="5.25" PointY="48.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ditgas_pmoModel.m_project_under_study" Width="1.5" PointX="10.5" PointY="51.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ditgas_pmoModel.m_project_under_study_task" Width="1.5" PointX="12.75" PointY="52.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ditgas_pmoModel.m_rca" Width="1.5" PointX="5.25" PointY="51.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ditgas_pmoModel.m_task" Width="1.5" PointX="5.25" PointY="57" IsExpanded="true" />
+        <EntityTypeShape EntityType="ditgas_pmoModel.m_task_progress" Width="1.5" PointX="7.5" PointY="55" IsExpanded="true" />
+        <EntityTypeShape EntityType="ditgas_pmoModel.m_task_recovery" Width="1.5" PointX="7.5" PointY="57.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ditgas_pmoModel.m_task_recovery_schedule" Width="1.5" PointX="9.75" PointY="58" IsExpanded="true" />
+        <EntityTypeShape EntityType="ditgas_pmoModel.m_task_schedule" Width="1.5" PointX="7.5" PointY="60.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ditgas_pmoModel.outcome" Width="1.5" PointX="8.25" PointY="44" IsExpanded="true" />
+        <EntityTypeShape EntityType="ditgas_pmoModel.project" Width="1.5" PointX="6" PointY="39.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ditgas_pmoModel.project_display" Width="1.5" PointX="8.25" PointY="46.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ditgas_pmoModel.project_gallery" Width="1.5" PointX="8.25" PointY="49.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ditgas_pmoModel.project_under_study" Width="1.5" PointX="8.25" PointY="64.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ditgas_pmoModel.project_under_study_task" Width="1.5" PointX="10.5" PointY="64.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ditgas_pmoModel.rca_template" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ditgas_pmoModel.task" Width="1.5" PointX="8.25" PointY="68.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ditgas_pmoModel.task_activity" Width="1.5" PointX="13.5" PointY="77.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ditgas_pmoModel.task_progress" Width="1.5" PointX="13.5" PointY="81.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ditgas_pmoModel.task_recovery" Width="1.5" PointX="10.5" PointY="74.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ditgas_pmoModel.task_recovery_schedule" Width="1.5" PointX="12.75" PointY="74.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ditgas_pmoModel.task_schedule" Width="1.5" PointX="10.5" PointY="77.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ditgas_pmoModel.weather" Width="1.5" PointX="10.5" PointY="81.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ditgas_pmoModel.weekly_hse" Width="1.5" PointX="10.5" PointY="83.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ditgas_pmoModel.weekly_rca" Width="1.5" PointX="10.5" PointY="60.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ditgas_pmoModel.weekly_report" Width="1.5" PointX="8.25" PointY="81.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ditgas_pmoModel.project_notes" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="ditgas_pmoModel.FK_action_plan_progress_weekly_rca" ManuallyRouted="false" />
+        <AssociationConnector Association="ditgas_pmoModel.FK_action_plan_progress_weekly_report" ManuallyRouted="false" />
+        <AssociationConnector Association="ditgas_pmoModel.FK_company_user_company" ManuallyRouted="false" />
+        <AssociationConnector Association="ditgas_pmoModel.FK_m_project_company" ManuallyRouted="false" />
+        <AssociationConnector Association="ditgas_pmoModel.FK_project_company" ManuallyRouted="false" />
+        <AssociationConnector Association="ditgas_pmoModel.FK_m_project_contractor" ManuallyRouted="false" />
+        <AssociationConnector Association="ditgas_pmoModel.FK_project_contractor1" ManuallyRouted="false" />
+        <AssociationConnector Association="ditgas_pmoModel.FK_fid_item_project" ManuallyRouted="false" />
+        <AssociationConnector Association="ditgas_pmoModel.FK_incident_report_project" ManuallyRouted="false" />
+        <AssociationConnector Association="ditgas_pmoModel.FK_leading_indicator_project" ManuallyRouted="false" />
+        <AssociationConnector Association="ditgas_pmoModel.FK_m_investment_plan_m_project" ManuallyRouted="false" />
+        <AssociationConnector Association="ditgas_pmoModel.FK_m_investment_actual_m_project" ManuallyRouted="false" />
+        <AssociationConnector Association="ditgas_pmoModel.FK_m_investment_prognosis_m_investment_prognosis_period" ManuallyRouted="false" />
+        <AssociationConnector Association="ditgas_pmoModel.FK_m_project_prognosis_period_m_project" ManuallyRouted="false" />
+        <AssociationConnector Association="ditgas_pmoModel.FK_m_project_gallery_m_project" ManuallyRouted="false" />
+        <AssociationConnector Association="ditgas_pmoModel.FK_m_project_project" ManuallyRouted="false" />
+        <AssociationConnector Association="ditgas_pmoModel.FK_m_rca_m_project" ManuallyRouted="false" />
+        <AssociationConnector Association="ditgas_pmoModel.FK_m_task_m_project" ManuallyRouted="false" />
+        <AssociationConnector Association="ditgas_pmoModel.FK_m_project_under_study_project" ManuallyRouted="false" />
+        <AssociationConnector Association="ditgas_pmoModel.FK_m_project_under_study_project_under_study" ManuallyRouted="false" />
+        <AssociationConnector Association="ditgas_pmoModel.FK_m_project_under_study_task_m_project_under_study" ManuallyRouted="false" />
+        <AssociationConnector Association="ditgas_pmoModel.FK_m_task_m_task" ManuallyRouted="false" />
+        <AssociationConnector Association="ditgas_pmoModel.FK_m_task_progress_m_task" ManuallyRouted="false" />
+        <AssociationConnector Association="ditgas_pmoModel.FK_m_task_recovery_m_task" ManuallyRouted="false" />
+        <AssociationConnector Association="ditgas_pmoModel.FK_m_task_schedule_m_task" ManuallyRouted="false" />
+        <AssociationConnector Association="ditgas_pmoModel.FK_m_task_recovery_schedule_m_task_recovery" ManuallyRouted="false" />
+        <AssociationConnector Association="ditgas_pmoModel.FK_outcome_project" ManuallyRouted="false" />
+        <AssociationConnector Association="ditgas_pmoModel.FK_project_display_project" ManuallyRouted="false" />
+        <AssociationConnector Association="ditgas_pmoModel.FK_project_gallery_project" ManuallyRouted="false" />
+        <AssociationConnector Association="ditgas_pmoModel.FK_project_task_project" ManuallyRouted="false" />
+        <AssociationConnector Association="ditgas_pmoModel.FK_project_under_study_project" ManuallyRouted="false" />
+        <AssociationConnector Association="ditgas_pmoModel.FK_weekly_rca_project" ManuallyRouted="false" />
+        <AssociationConnector Association="ditgas_pmoModel.FK_weekly_report_project" ManuallyRouted="false" />
+        <AssociationConnector Association="ditgas_pmoModel.FK_project_under_study_task_project_under_study" ManuallyRouted="false" />
+        <AssociationConnector Association="ditgas_pmoModel.FK_project_task_project_task" ManuallyRouted="false" />
+        <AssociationConnector Association="ditgas_pmoModel.FK_project_task_recovery_project_task" ManuallyRouted="false" />
+        <AssociationConnector Association="ditgas_pmoModel.FK_project_task_schedule_project_task" ManuallyRouted="false" />
+        <AssociationConnector Association="ditgas_pmoModel.FK_task_activity_task" ManuallyRouted="false" />
+        <AssociationConnector Association="ditgas_pmoModel.FK_task_progress_task" ManuallyRouted="false" />
+        <AssociationConnector Association="ditgas_pmoModel.FK_task_activity_weekly_report" ManuallyRouted="false" />
+        <AssociationConnector Association="ditgas_pmoModel.FK_task_progress_weekly_report" ManuallyRouted="false" />
+        <AssociationConnector Association="ditgas_pmoModel.FK_task_recovery_schedule_task_recovery" ManuallyRouted="false" />
+        <AssociationConnector Association="ditgas_pmoModel.FK_weather_weekly_report" ManuallyRouted="false" />
+        <AssociationConnector Association="ditgas_pmoModel.FK_weekly_hse_weekly_report1" ManuallyRouted="false" />
+        <AssociationConnector Association="ditgas_pmoModel.FK_weekly_rca_weekly_report" ManuallyRouted="false" />
+        <AssociationConnector Association="ditgas_pmoModel.m_project_contractor" ManuallyRouted="false" />
+        <AssociationConnector Association="ditgas_pmoModel.project_contractor" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

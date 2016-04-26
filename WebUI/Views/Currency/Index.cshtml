@@ -1,0 +1,126 @@
+﻿@using WebUI.Extension;
+@{
+    ViewBag.Title = "Mata Uang";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var currentController = (WebUI.Controllers.CurrencyController)ViewContext.Controller;
+}
+
+<div class="page-header">
+    <div class="btn-group pull-right">
+        @Html.ActionLink("Tambah Currency", "Create", new { area = "" }, new { @class = "btn btn-default", @id="tour2" })
+    </div>
+    <h1 id="tour1">@ViewBag.Title</h1>
+</div>
+@Html.Raw(currentController.GetMessage())
+
+<div id="grid"></div>
+
+@section scripts
+    {
+    <script type="text/javascript">        
+        function deleteItem(e) {
+            e.preventDefault();
+            var data = this.dataItem(getDataRowGrid(e));
+            goToDeletePage('@Url.Action("Delete")' + "?id=" + data.Id, this.dataSource);
+        }
+
+        function editItem(e) {
+            e.preventDefault();
+            var data = this.dataItem(getDataRowGrid(e));
+            window.location.href = "@Url.Action("Edit")" + "?id=" + data.Id;
+        }
+
+        $(document).ready(function () {
+            $("#grid").kendoGrid({
+                dataSource: {
+                    transport: {
+                        read: {
+                            url: "@Url.Action("Binding")",
+                            dataType: "json",
+                            type:"POST",
+                        },
+                        parameterMap: function (options, operation) {
+                            if (operation !== "read" && options.models) {
+
+                            } else {
+
+                                if (options.filter) {
+                                    filter = options.filter.filters;
+                                    for (var i in filter) {
+                                        if (filter[i].field == "Currency") {
+                                            filter[i].field = "currency1";
+                                        }
+                                    }
+                                }
+
+                                if (options.sort) {
+                                    sort = options.sort;
+                                    for (var i in sort) {
+                                        if (sort[i].field == "Currency") {
+                                            sort[i].field = "currency1";
+                                        }
+                                    }
+                                }
+                                return options;
+                            }
+                        },
+                    },
+                    schema: {
+                        data: "data",
+                        total: "total",
+                        model: {
+                            fields: {
+                                "Value": {
+                                    type: "number"
+                                },
+                            }
+                        }
+                    },
+                    pageSize: 10,
+                    serverPaging: true,
+                    serverFiltering: true,
+                    serverSorting: true,
+                    //filter: { field: "Status", operator: "contains", value: "RETRIEVED" }
+                    sort: { field: "Currency", dir: "asc" },
+                },
+                filterable: kendoGridFilterable,
+                pageable: true,
+                sortable: true,
+                columns: [
+                    {
+                        field: "Id",
+                        width: 75,
+                    },
+                    {
+                        field: "Currency",
+                    },
+                    {
+                        field: "Value",
+                        format: 'n2',
+                        attributes: { "class": "text-right" },
+                        format: "{0:n2}"
+                    },
+                    {
+                        command: [
+                            {
+                                name: "edit",
+                                text: "edit",
+                                click: editItem,
+                                imageClass: "glyphicon glyphicon-edit",
+                                template: '<a class="k-button-icon #=className#" #=attr# href="\\#"><span class="#=imageClass#"></span></a>'
+                            },
+                            {
+                                name: "delete",
+                                text: "delete",
+                                click: deleteItem,
+                                imageClass: "glyphicon glyphicon-remove",
+                                template: '<a class="k-button-icon #=className#" #=attr# href="\\#"><span class="#=iconClass# #=imageClass#"></span></a>'
+                            }
+                        ],
+                        width: "65px"
+                    }
+                ],
+            });
+        });
+    </script>
+}

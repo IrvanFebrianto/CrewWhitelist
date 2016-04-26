@@ -1,0 +1,183 @@
+﻿@using WebUI.Infrastructure.Concrete
+@{
+    //kamus
+    string currentArea, currentController, currentAction, currentClass;
+
+    //algoritma
+    currentArea = (string)ViewContext.RouteData.DataTokens["area"];
+    currentController = (string)ViewContext.RouteData.Values["controller"];
+    currentAction = ViewContext.RouteData.GetRequiredString("action");
+
+    if (currentArea == null)
+    {
+        currentArea = "";        
+    }
+    
+    currentArea = currentArea.ToLower();
+    currentController = currentController.ToLower();
+    currentAction = currentAction.ToLower();
+}
+
+<!-- Left panel : Navigation area -->
+<!-- Note: This width of the aside area can be adjusted through LESS variables -->
+<aside id="left-panel">
+
+    <!-- User info -->
+    @{ Html.RenderPartial("SmartAdmin/_CurrentUser"); }
+    <!-- end user info -->
+    <!-- NAVIGATION : This navigation is also responsive
+
+    To make this navigation dynamic please make sure to link the node
+    (the reference to the nav > ul) after page load. Or the navigation
+    will not initialize.
+    -->
+    <nav>
+        <!-- NOTE: Notice the gaps after each icon usage <i></i>..
+        Please note that these links work a bit different than
+        traditional href="" links. See documentation for details.
+        -->
+
+        <ul>
+            @if((User as CustomPrincipal).HasAccess("Booking"))
+            {
+                currentClass = "";
+
+                //if ((currentController == "Home") && (currentAction == "TestAuthorize"))
+                //{
+                //    currentClass = "active";
+                //}
+                
+                <li class="@currentClass">
+                    <a href="@Url.Action("Index", "Booking", new { area = "" })" title="Dashboard"><span class="menu-item-parent">Dashboard</span></a>
+                </li>
+            }
+            
+            @if ((User as CustomPrincipal).HasAccess("Invoice"))
+            {
+                currentClass = "";
+
+                //if ((currentController == "Home") && (currentAction == "TestAuthorize"))
+                //{
+                //    currentClass = "active";
+                //}
+
+                <li class="@currentClass">
+                    <a href="@Url.Action("Index", "Invoice", new { area = "" })" title="Invoice"><span class="menu-item-parent">Invoice</span></a>
+                </li>
+            }
+            
+            @if ((User as CustomPrincipal).HasAccess("Security Guard"))
+            {
+                currentClass = "";
+
+                if (currentArea == "securityguard")
+                {
+                    currentClass = "active";
+                }
+
+                <li class="@currentClass">
+                    <a href="@Url.Action("Index", "Dashboard", new { area = "SecurityGuard" })" title="Security Guard"><span class="menu-item-parent">Security Guard</span></a>
+                </li>
+            }
+            
+            @if ((User as CustomPrincipal).HasAccess("Car"))
+            {
+                currentClass = "";
+
+                if ((currentController == "car") && (currentArea == ""))
+                {
+                    currentClass = "active";
+                }
+
+                <li class="@currentClass">
+                    <a href="@Url.Action("Index", "Car", new { area = "" })" title="Mobil">Mobil</a>
+                </li>
+            }
+
+            @if ((User as CustomPrincipal).HasAccess("Driver"))
+            {
+                currentClass = "";
+
+                if ((currentController == "driver") && (currentArea == ""))
+                {
+                    currentClass = "active";
+                }
+
+                <li class="@currentClass">
+                    <a href="@Url.Action("Index", "Driver", new { area = "" })" title="Supir">Supir</a>
+                </li>
+            }
+
+            @if ((User as CustomPrincipal).HasAccess("Customer"))
+            {
+                currentClass = "";
+
+                if ((currentController == "customer") && (currentArea == ""))
+                {
+                    currentClass = "active";
+                }
+
+                <li class="@currentClass">
+                    <a href="@Url.Action("Index", "Customer", new { area = "" })" title="Tamu">Tamu</a>
+                </li>
+            }
+            
+            @if ((User as CustomPrincipal).HasAccess("Car Brand") ||
+                (User as CustomPrincipal).HasAccess("Car Model") ||
+                (User as CustomPrincipal).HasAccess("Owner"))
+            {
+                <li class="">
+                    <a href="#"><span class="menu-item-parent">Data Master</span></a>
+                    <ul>
+                        @if ((User as CustomPrincipal).HasAccess("Car Brand"))
+                        {
+                            currentClass = "";
+
+                            if ((currentController == "carbrand") && (currentArea == ""))
+                            {
+                                currentClass = "active";
+                            }
+
+                            <li class="@currentClass">
+                                <a href="@Url.Action("Index", "CarBrand", new { area = "" })" title="Merk Mobil">Merk Mobil</a>
+                            </li>
+                        }
+
+                        @if ((User as CustomPrincipal).HasAccess("Car Model"))
+                        {
+                            currentClass = "";
+
+                            if ((currentController == "carmodel") && (currentArea == ""))
+                            {
+                                currentClass = "active";
+                            }
+
+                            <li class="@currentClass">
+                                <a href="@Url.Action("Index", "CarModel", new { area = "" })" title="Tipe Mobil">Tipe Mobil</a>
+                            </li>
+                        }
+
+                        @if ((User as CustomPrincipal).HasAccess("Owner"))
+                        {
+                            currentClass = "";
+
+                            if ((currentController == "owner") && (currentArea == ""))
+                            {
+                                currentClass = "active";
+                            }
+
+                            <li class="@currentClass">
+                                <a href="@Url.Action("Index", "Owner", new { area = "" })" title="Partner Karental">Partner Karental</a>
+                            </li>
+                        }
+                    </ul>
+                </li>
+            }
+        </ul>
+    </nav>
+    @*<span class="minifyme" data-action="minifyMenu">
+        <i class="fa fa-arrow-circle-left hit"></i>
+    </span>*@
+
+</aside>
+<!-- END NAVIGATION -->

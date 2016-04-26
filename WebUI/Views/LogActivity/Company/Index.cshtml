@@ -1,0 +1,107 @@
+@using WebUI.Extension;
+@using MvcSiteMapProvider.Web.Html;
+@{
+    ViewBag.Title = "Company";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var currentController = (WebUI.Controllers.CompanyController)ViewContext.Controller;
+}
+<div class="page-header">
+    <div class="btn-group pull-right">
+        @Html.ActionLink("Add Company", "Create", new { area = "" }, new { @class = "btn btn-default" })
+    </div>
+    <h1>@ViewBag.Title</h1>
+</div>
+@Html.Raw(currentController.GetMessage())
+<div id="grid"></div>
+
+@section scripts
+    {
+    <script type="text/javascript">
+
+        function deleteItem(e) {
+            e.preventDefault();
+            var data = this.dataItem(getDataRowGrid(e));
+            goToDeletePage('@Url.Action("Delete")' + "?id=" + data.Id,this.dataSource);
+        }
+
+        function editItem(e) {
+            e.preventDefault();
+            var data = this.dataItem(getDataRowGrid(e));
+            window.location.href = "@Url.Action("Edit")" + "?id=" + data.Id;
+        }
+
+        $(document).ready(function () {
+
+            var ds = new kendo.data.DataSource({
+                pageable: true,
+                pageSize: 10,
+                serverFiltering: true,
+                serverPaging: true,
+                serverSorting: true,
+                sortable:true,
+                transport: {
+                    read: {
+                        url: "@Url.Action("Binding")",
+                        dataType: "json",
+                        type:"POST",
+                    },
+                    parameterMap: function (options, operation) {
+                        if (operation !== "read" && options != '') {
+                            return kendo.stringify(options);
+                        }
+                        else if (operation == "read") {
+                            return options;
+                        }
+                    }
+                },
+				schema: {
+                    data: "data",
+                    total: "total",
+                    model: {
+                        fields: {
+							"Id": { type: "number" },
+							"Name": { type: "string" },
+                        }
+                    }
+                },
+            });
+
+            $("#grid").kendoGrid({
+                dataSource: ds,
+                filterable: true,
+                pageable: true,
+                sortable: true,
+                columns: [
+					{
+                        field: "Id",
+                        title: "Id",
+                    },
+					{
+                        field: "Name",
+                        title: "Name",
+                    },
+                    {
+                        command: [
+                            {
+                                name: "edit",
+                                text: "edit",
+                                click: editItem,
+                                imageClass: "glyphicon glyphicon-edit",
+                                template: '<a class="k-button-icon #=className#" #=attr# href="\\#"><span class="#=imageClass#"></span></a>'
+                            },
+                            {
+                                name: "delete",
+                                text: "delete",
+                                click: deleteItem,
+                                imageClass: "glyphicon glyphicon-remove",
+                                template: '<a class="k-button-icon #=className#" #=attr# href="\\#"><span class="#=iconClass# #=imageClass#"></span></a>'
+                            }
+                        ],
+                        width: "90px"
+                    }
+                ],
+            });
+        });
+    </script>
+}
+

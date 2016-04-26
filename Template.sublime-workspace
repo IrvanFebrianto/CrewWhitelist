@@ -1,0 +1,774 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"font",
+				"font-weight"
+			],
+			[
+				"Va",
+				"values"
+			],
+			[
+				"pro",
+				"promoDis"
+			],
+			[
+				"TglT",
+				"TglTempo"
+			],
+			[
+				"Kode",
+				"KodeTrans"
+			],
+			[
+				"opt",
+				"option	Tag"
+			],
+			[
+				"Laba",
+				"LabaRugi"
+			],
+			[
+				"Harga",
+				"HargaJual"
+			],
+			[
+				"kendo",
+				"kendoGrid"
+			],
+			[
+				"Posi",
+				"PositionId"
+			],
+			[
+				"Positio",
+				"PositionName"
+			],
+			[
+				"findValueOfA",
+				"findValueOfAttr"
+			],
+			[
+				"rever",
+				"reverseString"
+			],
+			[
+				"equ",
+				"equation"
+			],
+			[
+				"proto",
+				"prototype"
+			],
+			[
+				"op",
+				"option	Tag"
+			],
+			[
+				"sear",
+				"searchValue"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/E/Informatics/Proyek/Rekadia/Gathering PO/Template.sublime-project",
+			"settings":
+			{
+				"buffer_size": 150,
+				"line_ending": "Windows",
+				"name": "{"
+			}
+		},
+		{
+			"file": "WebUI/Models/CompanyFormStub.cs",
+			"settings":
+			{
+				"buffer_size": 908,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "WebUI/Views/Log/Index.cshtml",
+			"settings":
+			{
+				"buffer_size": 4714,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 113.0,
+		"last_filter": "auto",
+		"selected_items":
+		[
+			[
+				"auto",
+				"Auto indent"
+			],
+			[
+				"aut",
+				"Auto indent"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"instl",
+				"Package Control: Install Package"
+			],
+			[
+				"insl",
+				"Package Control: Install Package"
+			],
+			[
+				"au",
+				"Auto indent"
+			],
+			[
+				"",
+				"Auto indent"
+			],
+			[
+				"a",
+				"Auto indent"
+			],
+			[
+				"auti",
+				"Auto indent"
+			],
+			[
+				"auto indent",
+				"Auto indent"
+			],
+			[
+				"auto ",
+				"Auto indent"
+			],
+			[
+				"ai",
+				"Auto indent"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"auto in",
+				"Auto indent"
+			],
+			[
+				"auo",
+				"Auto indent"
+			],
+			[
+				"auto inde",
+				"Auto indent"
+			],
+			[
+				"inde",
+				"Auto indent"
+			],
+			[
+				"ind",
+				"Indent XML"
+			]
+		],
+		"width": 408.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/E/Informatics/Proyek/Rekadia/Template",
+		"/E/Informatics/Proyek/Rekadia/Template/WebUI",
+		"/E/Informatics/Proyek/Rekadia/Template/WebUI/Models",
+		"/E/Informatics/Proyek/Rekadia/Template/WebUI/Views",
+		"/E/Informatics/Proyek/Rekadia/Template/WebUI/Views/Log"
+	],
+	"file_history":
+	[
+		"/E/Dropbox/Rekadian/Project/SPRINT/11. SPRINT XI/keterangan",
+		"/C/Users/Septu Jamasoka/AppData/Local/Mailbird/Attachments/6249/Peoplelocation.json",
+		"/Z/WEB PROJECT/WW-SERVICE/Web.config",
+		"/C/Users/Septu Jamasoka/AppData/Roaming/Sublime Text 3/Packages/User/PHP.sublime-settings",
+		"/C/Users/Septu Jamasoka/AppData/Roaming/Sublime Text 3/Packages/HTMLBeautify/HTMLBeautify.sublime-settings",
+		"/C/Users/Septu Jamasoka/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/E/xampp/htdocs/ims/admin.php",
+		"/C/Users/Septu Jamasoka/AppData/Local/Temp/error120880_02.xml",
+		"/E/Downloads/template_contractor.xlsx",
+		"/C/Users/Septu Jamasoka/AppData/Local/Temp/error133600_01.xml",
+		"/C/Users/Septu Jamasoka/AppData/Local/Temp/error041680_01.xml",
+		"/E/Informatics/Proyek/Pertamina/cormapII/CorMapDesigner/CorMapDesigner/CorMapDesigner/Upload/Designs/LPG Treater.xml",
+		"/E/Informatics/Proyek/Pertamina/cormapII/CorMapDesigner/CorMapDesigner/CorMapDesigner/Upload/Designs/NHT.xml",
+		"/E/Informatics/Proyek/Pertamina/cormapII/CorMapDesigner/CorMapDesigner/CorMapDesigner/Upload/Designs/plant6.xml",
+		"/E/Informatics/Proyek/Pertamina/cormapII/CorMapDesigner/CorMapDesigner/CorMapDesigner/Upload/Designs/PLATFORMER.xml",
+		"/E/Informatics/Proyek/Pertamina/cormap/stencils/new svg/Septu/Plant-8-2-rev.svg",
+		"/E/Informatics/Proyek/Pertamina/cormap/stencils/new svg/Septu/Plant-8-1.svg",
+		"/E/Informatics/Proyek/Pertamina/cormap/stencils/new svg/Septu/Plant-8-3.svg",
+		"/E/Informatics/Proyek/Pertamina/cormap/stencils/stencils result/13-c.shape",
+		"/E/Informatics/Proyek/Pertamina/cormap/stencils/new svg/Septu/Plant-8-4.svg",
+		"/E/Informatics/Proyek/Pertamina/cormap/stencils/new svg/Septu/Plant-8-5-rev.svg",
+		"/E/Informatics/Proyek/Pertamina/cormap/stencils/stencils result/15-c.shape",
+		"/E/Informatics/Proyek/Pertamina/cormap/stencils/stencils result/12-c.shape",
+		"/E/Informatics/Proyek/Pertamina/cormap/stencils/stencils result/14-c.shape",
+		"/E/Informatics/Proyek/Pertamina/cormap/stencils/stencils result/11-c.shape",
+		"/E/Informatics/Proyek/Pertamina/cormap/stencils/stencils semi (new)/15-c.shape",
+		"/E/Informatics/Proyek/Pertamina/cormap/stencils/stencils semi (new)/12-c.shape",
+		"/E/Informatics/Proyek/Pertamina/cormapII/CorMapDesigner/CorMapDesigner/CorMapDesigner/Upload/Designs/HVUII.xml",
+		"/E/Informatics/Proyek/Pertamina/cormapII/CorMapDesigner/CorMapDesigner/CorMapDesigner/Upload/Designs/HVU III.xml",
+		"/E/Informatics/Proyek/Pertamina/cormapII/CorMapDesigner/CorMapDesigner/CorMapDesigner/Upload/Designs/HCU.xml",
+		"/E/Informatics/Proyek/Pertamina/cormapII/CorMapDesigner/CorMapDesigner/CorMapDesigner/Upload/Designs/Drawing2.xml",
+		"/E/Informatics/Proyek/Pertamina/cormapII/CorMapDesigner/CorMapDesigner/CorMapDesigner/Upload/Designs/CDU V.xml",
+		"/E/Informatics/Proyek/Pertamina/cormapII/CorMapDesigner/CorMapDesigner/CorMapDesigner/Upload/Designs/CDU V Light.xml",
+		"/E/xampp/htdocs/ims/page/list.php",
+		"/E/Games/OPO SPECIFIC QUALCOMM BAND UNLOCKER/OPO Diagnostics Driver/Win x64/htcusbmdmv64.cat",
+		"/E/xampp/htdocs/smc/wp-content/themes/smcbandung/assets/css/style.css",
+		"/E/xampp/htdocs/smc/wp-content/themes/smcbandung/contact.php",
+		"/E/xampp/htdocs/smc/wp-content/themes/smcbandung/category.php",
+		"/E/xampp/htdocs/smc/wp-content/themes/smcbandung/search.php",
+		"/E/xampp/htdocs/smc/wp-content/themes/smcbandung/single.php",
+		"/E/xampp/htdocs/smc/wp-content/themes/smcbandung/taxonomy-item_category.php",
+		"/E/xampp/htdocs/smc/wp-content/themes/smcbandung/catalog.php",
+		"/E/xampp/htdocs/smc/wp-content/themes/smcbandung/footer.php",
+		"/E/xampp/htdocs/smc/wp-content/themes/smcbandung/index.php",
+		"/E/xampp/htdocs/smc/wp-content/themes/smcbandung/blog.php",
+		"/E/Informatics/Proyek/Star Energy/PermitToWork/.gitignore",
+		"/E/Informatics/Proyek/Star Energy/fracas/StarEnergi/Models - Copy/user.cs",
+		"/E/Informatics/Proyek/Star Energy/fracas/StarEnergi/Models/EmployeeDelegationChecker.cs",
+		"/E/Informatics/Proyek/Star Energy/fracas/StarEnergi/Models/user.cs",
+		"/E/Informatics/Proyek/Star Energy/fracas/.gitignore",
+		"/E/Informatics/Proyek/Star Energy/AccessPublish/Views/PrintBadge/Index.cshtml",
+		"/E/xampp/htdocs/smc/wp-content/themes/smcbandung/assets/js/main.js",
+		"/E/xampp/htdocs/smc/wp-content/themes/smcbandung/header.php",
+		"/E/Informatics/Proyek/SMC/themes/about-us-3.html",
+		"/E/xampp/htdocs/smc/wp-content/themes/smcbandung/about.php",
+		"/E/Informatics/Proyek/AndroidStudioProjects/SimpleApps/app/src/main/java/com/rekadia/simpleapps/localStorage/FileStorage.java",
+		"/E/Informatics/Proyek/Star Energy/Document + Requirement/IMS/Design/IMS-Star Energy-01.jpg",
+		"/E/Informatics/Proyek/Star Energy/fracas/StarEnergi/Models - Copy/employee.cs",
+		"/E/Informatics/Proyek/Star Energy/fracas/StarEnergi/Models/employee.cs",
+		"/E/Informatics/Proyek/Star Energy/PermitToWork/PermitToWork/Views/Shared/_Layout.cshtml",
+		"/Z/WEB PROJECT/GIT-REPO/Web.config",
+		"/Z/WEB PROJECT/WW-PTW/Web.config",
+		"/E/Informatics/Proyek/Rekadia/NomorSurat/.git/HEAD",
+		"/E/Informatics/Proyek/BonoboModification/Publish/Web.config",
+		"/C/Users/Septu Jamasoka/Documents/testse/test.txt",
+		"/E/Informatics/Testing/test/index.css",
+		"/E/Informatics/Testing/test/index.html",
+		"/C/Users/Septu Jamasoka/Documents/touch.bat",
+		"/Z/WEB PROJECT/GIT-REPO/App_Data/Bonobo.Git.Server.Errors.log",
+		"/E/Informatics/Proyek/AndroidStudioProjects/SimpleApps/app/src/main/AndroidManifest.xml",
+		"/Z/WEB PROJECT/WW-FRACAS/web.config",
+		"/E/Informatics/Proyek/Star Energy/fracas/db/script.sql",
+		"/E/Informatics/Proyek/Star Energy/service-ww/StarEnergyService/Web.config",
+		"/E/Informatics/Proyek/Mini Bank/WebUI/Web.config",
+		"/C/Users/Septu Jamasoka/Documents/IISExpress/config/applicationhost.config",
+		"/E/xampp/htdocs/smc/wp-content/themes/smcbandung/functions.php",
+		"/E/Informatics/Proyek/SMC/themes/elements-animations.html",
+		"/C/Users/Septu Jamasoka/Documents/IISExpress/Logs/Bonobo.Git.Server-Site/ex150303.log",
+		"/C/Users/Septu Jamasoka/Documents/IISExpress/config/aspnet.config",
+		"/E/Informatics/Proyek/BonoboGitServer/Bonobo.Git.Server/App_Data/Web.config",
+		"/E/Informatics/Proyek/BonoboGitServer/Bonobo.Git.Server/bin/Web.config",
+		"/E/Informatics/Proyek/Mini Bank/WebUI/WebUI.csproj",
+		"/Z/WEB PROJECT/MINIBANK/Web.config",
+		"/E/xampp/php/php.ini",
+		"/E/xampp/htdocs/smc/wp-includes/general-template.php",
+		"/E/xampp/htdocs/smc/wp-content/themes/smcbandung/taxonomy-faq_category.php",
+		"/E/Informatics/Proyek/SMC/themes/contact.html",
+		"/E/Informatics/Proyek/SMC/themes/elements-notification.html",
+		"/E/xampp/mailoutput/mail-20150227-0746-849000.txt",
+		"/E/Downloads/Aiga_mail_inverted_nobg.svg",
+		"/E/Downloads/email.svg",
+		"/E/Informatics/Proyek/Pertamina/cormap/stencils/new svg/Septu/HVU-III.svg",
+		"/E/Informatics/Proyek/Pertamina/cormap/stencils/stencils result/9-c.shape",
+		"/E/Informatics/Proyek/Pertamina/cormap/CorMapDesigner/CorMapDesigner/CorMapDesigner/Upload/Designs/CDU V.xml",
+		"/E/Informatics/Proyek/Pertamina/cormap/CorMapDesigner/CorMapDesigner/CorMapDesigner/Upload/Designs/CDU V Light.xml",
+		"/E/xampp/htdocs/smc/wp-content/themes/smcbandung/style.css",
+		"/E/xampp/htdocs/smc/wp-content/themes/smcbandung/assets/css/customizer/home-pages-customizer.css",
+		"/E/xampp/htdocs/smc/wp-content/themes/smcbandung/assets/css/customizer/pages.css",
+		"/E/xampp/htdocs/smc/wp-content/themes/smcbandung/assets/css/customizer/shop-2-pages-customizer.css",
+		"/E/xampp/htdocs/smc/wp-content/themes/smcbandung/assets/css/customizer/elements-pages-customizer.css",
+		"/E/Informatics/Proyek/Pertamina/cormap/stencils/stencils result/7-c.shape",
+		"/E/Informatics/Proyek/Pertamina/cormap/stencils/stencils result/8-c.shape",
+		"/E/Informatics/Proyek/Pertamina/cormap/stencils/new svg/Septu/drawing-58-kiri.svg",
+		"/E/Informatics/Proyek/Pertamina/cormap/CorMapDesigner/CorMapDesigner/CorMapDesigner/Upload/Designs/Drawing2.xml",
+		"/Z/WEB PROJECT/GIT-REPO/Views/Shared/_Layout.cshtml",
+		"/E/Informatics/Proyek/Pertamina/cormap/stencils/stencils result/2-c.shape",
+		"/E/Informatics/Proyek/Pertamina/cormap/stencils/stencils result/5-c.shape",
+		"/E/Informatics/Proyek/Pertamina/cormap/stencils/stencils result/4-c.shape",
+		"/E/Informatics/Proyek/Pertamina/cormap/stencils/stencils result/3-c.shape",
+		"/E/Informatics/Proyek/Pertamina/cormap/stencils/stencils result/1-c.shape",
+		"/E/Informatics/Proyek/Pertamina/cormap/stencils/stencils result/6-c.shape",
+		"/E/Informatics/Proyek/Star Energy/fracas/StarEnergi/Web.config",
+		"/E/xampp/htdocs/dirgantara/wp-activate.php",
+		"/E/xampp/htdocs/dirgantara/wp-admin/async-upload.php",
+		"/E/xampp/htdocs/dirgantara/wp-includes/author-template.php",
+		"/E/xampp/htdocs/dirgantara/wp-includes/js/autosave.js",
+		"/F/CDU-V-5.svg",
+		"/F/CDU-V-6.svg",
+		"/F/CDU-V.svg",
+		"/F/CDU-V-4.svg",
+		"/F/CDU-V-2.svg",
+		"/F/CDU-V-3.svg",
+		"/E/xampp/htdocs/dirgantara/wp-content/themes/carat/category-car.php",
+		"/E/xampp/htdocs/dirgantara/wp-content/themes/carat/blog.php",
+		"/E/xampp/htdocs/dirgantara/wp-content/themes/carat/single.php",
+		"/E/xampp/htdocs/dirgantara/wp-content/themes/carat/comments.php",
+		"/E/xampp/htdocs/dirgantara/wp-content/themes/carat/category.php",
+		"/E/xampp/htdocs/dirgantara/wp-content/themes/carat/index.php"
+	],
+	"find":
+	{
+		"height": 36.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"Septu",
+			"\\n\\s+",
+			"\"/>\n",
+			"\\n\\s+",
+			"(\\n\\s+<[\\w\\=\\\"\\s]+name=\"CA\"[\\w\\s\\=\\\":\\/\\.\\(\\)\\&\\;\\%]+)viewname=\"Corrosion Allowance\"([\\w\\s\\=\\\":\\/\\.\\(\\)\\&\\;\\%]+\\/>)",
+			"\\n\\s+",
+			"(\\n\\s+<[\\w\\=\\\"\\s]+name=\"CA\"[\\w\\s\\=\\\":\\/\\.\\(\\)\\&\\;\\%]+)viewname=\"Corrosion Allowance\"([\\w\\s\\=\\\":\\/\\.\\(\\)\\&\\;\\%]+\\/>)",
+			"\\n\\s+",
+			"(\\n\\s+<[\\w\\=\\\"\\s]+name=\"CA\"[\\w\\s\\=\\\":\\/\\.\\(\\)\\&\\;\\%]+)viewname=\"Corrosion Allowance\"([\\w\\s\\=\\\":\\/\\.\\(\\)\\&\\;\\%]+\\/>)",
+			"\\n\\s+",
+			"(\\n\\s+<[\\w\\=\\\"\\s]+name=\"CA\"[\\w\\s\\=\\\":\\/\\.\\(\\)\\&\\;\\%]+)viewname=\"Corrosion Allowance\"([\\w\\s\\=\\\":\\/\\.\\(\\)\\&\\;\\%]+\\/>)",
+			"\\n\\s+",
+			"(\\n\\s+<[\\w\\=\\\"\\s]+name=\"CA\"[\\w\\s\\=\\\":\\/\\.\\(\\)\\&\\;\\%]+)viewname=\"Corrosion Allowance\"([\\w\\s\\=\\\":\\/\\.\\(\\)\\&\\;\\%]+\\/>)",
+			"\\n\\s+",
+			"(\\n\\s+<[\\w\\=\\\"\\s]+name=\"CA\"[\\w\\s\\=\\\":\\/\\.\\(\\)\\&\\;\\%]+)viewname=\"Corrosion Allowance\"([\\w\\s\\=\\\":\\/\\.\\(\\)\\&\\;\\%]+\\/>)",
+			"\\n\\s+",
+			"(\\n\\s+<[\\w\\=\\\"\\s]+name=\"CA\"[\\w\\s\\=\\\":\\/\\.\\(\\)\\&\\;\\%]+)viewname=\"Corrosion Allowance\"([\\w\\s\\=\\\":\\/\\.\\(\\)\\&\\;\\%]+\\/>)",
+			"\\n\\s+",
+			"(\\n\\s+<[\\w\\=\\\"\\s]+name=\"CA\"[\\w\\s\\=\\\":\\/\\.\\(\\)\\&\\;\\%]+)viewname=\"Corrosion Allowance\"([\\w\\s\\=\\\":\\/\\.\\(\\)\\&\\;\\%]+\\/>)",
+			"\\n\\s+",
+			"(\\n\\s+<[\\w\\=\\\"\\s]+name=\"CA\"[\\w\\s\\=\\\":\\/\\.\\(\\)\\&\\;\\%]+)viewname=\"Corrosion Allowance\"([\\w\\s\\=\\\":\\/\\.\\(\\)\\&\\;\\%]+\\/>)",
+			"\\n\\s+",
+			"(\\n\\s+<[\\w\\=\\\"\\s]+name=\"CA\"[\\w\\s\\=\\\":\\/\\.\\(\\)\\&\\;\\%]+)viewname=\"Corrosion Allowance\"([\\w\\s\\=\\\":\\/\\.\\(\\)\\&\\;\\%]+\\/>)",
+			"\\n\\s+",
+			".tt",
+			"\\n\\s+",
+			"E-201-11",
+			"0,2 48,2 48,48 0,48",
+			"\\n\\s+",
+			"\"E-201-08",
+			"auth",
+			"machineTo",
+			"{\n",
+			"max",
+			"from",
+			"\\n\\s+",
+			"C-201-12",
+			"C-201-10",
+			"C-201-12",
+			"\\n\\s+",
+			"C-201-12",
+			".product",
+			"product",
+			"\">\n",
+			"\\n\\s+",
+			"<attributes centerX=\"([\\w\\.]+)\" centerY=\"([\\w\\.]+)\" id=\"([\\w\\.]+)\">\\n\\s+<[\\w\\=\\\"\\s]+name=\"CrackPresent\"[\\w\\s\\=\\\":\\/\\.\\(\\)\\&\\;\\%]+\\/>",
+			"<attributes centerX=\"([\\w\\.]+)\" centerY=\"([\\w\\.]+)\" id=\"([\\w\\.]+)\">\\n\\s+<[\\w\\=\\\"\\s]+name=\"Insulasi\"[\\w\\s\\=\\\":\\/\\.\\(\\)\\&\\;\\%]+\\/>",
+			"<attributes centerX=\"([\\w.+])\" centerY=\"([\\w.+])\" id=\"([\\w.+])\">\\n\\s+<[\\w\\=\\\"\\s]+name=\"Insulasi\"[\\w\\s\\=\\\":\\/\\.\\(\\)\\&\\;\\%]+\\/>",
+			"\\n\\s+",
+			"\\n\\s+<[\\w\\=\\\"\\s]+name=\"Insulasi\"[\\w\\s\\=\\\":\\/\\.\\(\\)\\&\\;\\%]+\\/>",
+			"insulasi",
+			"<[\\w\\=\\\"\\s]+name=\"Insulasi\"[\\w\\s\\=\\\":\\/\\.\\(\\)\\&\\;\\%]+\\/>",
+			"\\n\\s+",
+			"\\n\\s+<[\\w\\=\\\"\\s]+name=\"Insulasi\"[\\w\\s\\=\\\":\\/\\.\\(\\)\\&\\;\\%]+\\/>",
+			"\\n\\s+",
+			"\\n\\s+<[\\w\\=\\\"\\s]+name=\"Insulasi\"[\\w\\s\\=\\\":\\/\\.\\(\\)\\&\\;\\%]+\\/>",
+			"E-1-15",
+			"\\n\\s+",
+			"<attributes centerX=\"([\\w\\.]+)\" centerY=\"([\\w\\.]+)\" id=\"([\\w\\.]+)\">\\n\\s+<[\\w\\=\\\"\\s]+name=\"CrackPresent\"[\\w\\s\\=\\\":\\/\\.\\(\\)\\&\\;\\%]+\\/>",
+			"<attributes centerX=\"([\\w\\.]+)\" centerY=\"([\\w\\.]+)\" id=\"([\\w\\.]+)\">\\n\\s+<[\\w\\=\\\"\\s]+name=\"YearRepair\"[\\w\\s\\=\\\":\\/\\.\\(\\)\\&\\;\\%]+\\/>",
+			"<attributes centerX=\"([\\w.+])\" centerY=\"([\\w.+])\" id=\"([\\w.+])\">\\n\\s+<[\\w\\=\\\"\\s]+name=\"YearRepair\"[\\w\\s\\=\\\":\\/\\.\\(\\)\\&\\;\\%]+\\/>",
+			"<attributes centerX=\"([\\w.+])\" centerY=\"([\\w.+])\" id=\"([\\w.+])\">\\n\\s+<[\\w\\=\\\"\\s]+name=\"FlowRate\"[\\w\\s\\=\\\":\\/\\.\\(\\)\\&\\;\\%]+\\/>",
+			"<attributes centerX=\"([\\w.+])\" centerY=\"([\\w.+])\" id=\"([\\w.+])\">\\n\\s+<[\\w\\=\\\"\\s]+name=\"CrackPresent\"[\\w\\s\\=\\\":\\/\\.\\(\\)\\&\\;\\%]+\\/>",
+			"<attributes centerX=\"([\\w\\.]+)\" centerY=\"([\\w\\.]+)\" id=\"([\\w\\.]+)\">[\\n\\s]+<[\\w\\=\\\"\\s]+name=\"Insulasi\"[\\w\\s\\=\\\":\\/\\.\\(\\)\\&\\;\\%]+\\/>",
+			"<attributes centerX=\"([\\w\\.+])\" centerY=\"([\\w\\.+])\" id=\"([\\w\\.+])\">[\\n\\s]+<[\\w\\=\\\"\\s]+name=\"Insulasi\"[\\w\\s\\=\\\":\\/\\.\\(\\)\\&\\;\\%]+\\/>",
+			"<attributes centerX=\"([\\w.+])\" centerY=\"([\\w\\.+])\" id=\"([\\w\\.+])\">[\\n\\s]+<[\\w\\=\\\"\\s]+name=\"Insulasi\"[\\w\\s\\=\\\":\\/\\.\\(\\)\\&\\;\\%]+\\/>",
+			"<attributes centerX=\"([\\w.+])\" centerY=\"([\\w\\.+])\" id=\"([\\w\\.+])\">\\n\\s+<[\\w\\=\\\"\\s]+name=\"Insulasi\"[\\w\\s\\=\\\":\\/\\.\\(\\)\\&\\;\\%]+\\/>",
+			"<attributes centerX=\"([\\w.+])\" centerY=\"([\\w.+])\" id=\"([\\w.+])\">\\n\\s+<[\\w\\=\\\"\\s]+name=\"Insulasi\"[\\w\\s\\=\\\":\\/\\.\\(\\)\\&\\;\\%]+\\/>",
+			"\"CA\"",
+			".cs",
+			"get_search_form",
+			"get_query_te",
+			"search",
+			"#logo img",
+			"BPL",
+			"wid",
+			"wid-id",
+			"wid-id-",
+			"wid-id-4",
+			"widgets",
+			"	",
+			"wid-id-0",
+			"Live Fedd",
+			"timeout",
+			"glyp",
+			"\\n\\s+",
+			"rect",
+			"\\n\\s+",
+			"rect",
+			"\\n\\s+",
+			"exportImages",
+			"exportImage",
+			"exportImages",
+			"exportImage",
+			"export",
+			"cH",
+			"\\n\\s+",
+			"C-3-03",
+			"\\n\\s+",
+			"Encode",
+			"clearfix",
+			"},\n",
+			"control",
+			"\\n\\s+",
+			"raiserror ([0-9]+) ([\\w_ \\@\\',.!/]+)",
+			"\\n\\s+",
+			"<attributes centerX=\"([0-9\\.]+)\" centerY=\"([0-9\\.]+)\" id=\"([0-9]+)\">\\n\\s+<attr adjustable=\"([0-9]+)\"([\\w\\\"\\=\\s]+)name=\"Insulation\" ([\\w\\\"\\=\\/\\:\\.\\s]+)/>",
+			"<attributes centerX=\"([0-9\\.]+)\" centerY=\"([0-9\\.]+)\" id=\"([0-9]+)\">\\n\\s+<attr adjustable=\"([0-9]+)\"([\\w\\\"\\=\\s]+)name=\"CrackPresent\" ([\\w\\\"\\=\\/\\:\\.\\s]+)/>",
+			"\\n\\s+",
+			"C-2-03",
+			"\\n\\s+",
+			"Year to Repair",
+			"\\n\\s+",
+			"<attributes>\\n\\s+",
+			"<attributes centerX=\"([0-9\\.]+)\" centerY=\"([0-9\\.]+)\" id=\"([0-9]+)\">\\n\\s+",
+			"\\n\\s+",
+			"<attributes centerX=\"([0-9\\.]+)\" centerY=\"([0-9\\.]+)\" id=\"([0-9]+)\">\\n\\s+<attr adjustable=\"([0-9]+)\"([\\w\\\"\\=\\s]+)name=\"CrackPresent\" ([\\w\\\"\\=\\/\\:\\.\\s]+)/>",
+			"3.4.1",
+			"modal-open",
+			"clCon",
+			"\\n\\s+",
+			"H&amp;amp;lt;sub&amp;amp;gt;2&amp;amp;lt;/sub&amp;amp;gt;S In Water",
+			"in water",
+			"\\n\\s+<[\\w\\=\\\"\\s]+adjustable=\"0\"[\\w\\s\\=\\\":\\/\\.\\(\\)\\&\\;]+\\/>",
+			"\\n\\s+",
+			"E-1-14",
+			"E-1-08",
+			"E-1-12"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"",
+			"\\n\\t\\t\\t\\t<attr adjustable=\"1\" crucial=\"0\" name=\"CAPractical\" recount=\"0\" equ=\"\" type=\"0\" viewname=\"Corrosion Allowance (Practical)\" xmlns=\"http://www.w3.org/1999/xhtml\"/>\\1viewname=\"Corrosion Allowance (Theoritical)\"\\2",
+			"",
+			"\\n\\t\\t\\t\\t<attr adjustable=\"1\" crucial=\"0\" name=\"CAPractical\" recount=\"0\" equ=\"\" type=\"0\" viewname=\"Corrosion Allowance (Practical)\" xmlns=\"http://www.w3.org/1999/xhtml\"/>\\1viewname=\"Corrosion Allowance (Theoritical)\"\\2",
+			"",
+			"\\n\\t\\t\\t\\t<attr adjustable=\"1\" crucial=\"0\" name=\"CAPractical\" recount=\"0\" equ=\"\" type=\"0\" viewname=\"Corrosion Allowance (Practical)\" xmlns=\"http://www.w3.org/1999/xhtml\"/>\\1viewname=\"Corrosion Allowance (Theoritical)\"\\2",
+			"",
+			"\\n\\t\\t\\t\\t<attr adjustable=\"1\" crucial=\"0\" name=\"CAPractical\" recount=\"0\" equ=\"\" type=\"0\" viewname=\"Corrosion Allowance (Practical)\" xmlns=\"http://www.w3.org/1999/xhtml\"/>\\1viewname=\"Corrosion Allowance (Theoritical)\"\\2",
+			"",
+			"\\n\\t\\t\\t\\t<attr adjustable=\"1\" crucial=\"0\" name=\"CAPractical\" recount=\"0\" equ=\"\" type=\"0\" viewname=\"Corrosion Allowance (Practical)\" xmlns=\"http://www.w3.org/1999/xhtml\"/>\\1viewname=\"Corrosion Allowance (Theoritical)\"\\2",
+			"",
+			"\\n\\t\\t\\t\\t<attr adjustable=\"1\" crucial=\"0\" name=\"CAPractical\" recount=\"0\" equ=\"\" type=\"0\" viewname=\"Corrosion Allowance (Practical)\" xmlns=\"http://www.w3.org/1999/xhtml\"/>\\1viewname=\"Corrosion Allowance (Theoritical)\"\\2",
+			"",
+			"\\n\\t\\t\\t\\t<attr adjustable=\"1\" crucial=\"0\" name=\"CAPractical\" recount=\"0\" equ=\"\" type=\"0\" viewname=\"Corrosion Allowance (Practical)\" xmlns=\"http://www.w3.org/1999/xhtml\"/>\\1viewname=\"Corrosion Allowance (Theoritical)\"\\2",
+			"",
+			"\\n\\t\\t\\t\\t<attr adjustable=\"1\" crucial=\"0\" name=\"CAPractical\" recount=\"0\" equ=\"\" type=\"0\" viewname=\"Corrosion Allowance (Practical)\" xmlns=\"http://www.w3.org/1999/xhtml\"/>\\1viewname=\"Corrosion Allowance (Theoritical)\"\\2",
+			"",
+			"\\n\\t\\t\\t\\t<attr adjustable=\"1\" crucial=\"0\" name=\"CAPractical\" recount=\"0\" equ=\"\" type=\"0\" viewname=\"Corrosion Allowance (Practical)\" xmlns=\"http://www.w3.org/1999/xhtml\"/>\\1viewname=\"Corrosion Allowance (Theoritical)\"\\2",
+			"",
+			"\\n\\t\\t\\t\\t<attr adjustable=\"1\" crucial=\"0\" name=\"CAPractical\" recount=\"0\" equ=\"\" type=\"0\" viewname=\"Corrosion Allowance (Practical)\" xmlns=\"http://www.w3.org/1999/xhtml\"/>\\1viewname=\"Corrosion Allowance (Theoritical)\"\\2",
+			"\\n\\t\\t\\t\\t<attr adjustable=\"1\" crucial=\"0\" name=\"CAPractical\" recount=\"0\" equ=\"0\" type=\"0\" viewname=\"Corrosion Allowance (Practical)\" xmlns=\"http://www.w3.org/1999/xhtml\"/>\\1viewname=\"Corrosion Allowance (Theoritical)\"\\2",
+			"\\n\\t\\t\\t\\t<attr adjustable=\"1\" crucial=\"0\" name=\"CAPractical\" equ=\"0\" type=\"0\" viewname=\"Corrosion Allowance (Practical)\" xmlns=\"http://www.w3.org/1999/xhtml\"/>\\1viewname=\"Corrosion Allowance (Theoritical)\"\\2",
+			"\\n\\t\\t\\t\\t<attr adjustable=\"1\" crucial=\"0\" name=\"CAPractical\" type=\"0\" viewname=\"Corrosion Allowance (Practical)\" xmlns=\"http://www.w3.org/1999/xhtml\"/>\\1viewname=\"Corrosion Allowance (Theoritical)\"\\2",
+			"<attr adjustable=\"1\" crucial=\"0\" name=\"CAPractical\" type=\"0\" viewname=\"Corrosion Allowance (Practical)\" xmlns=\"http://www.w3.org/1999/xhtml\"/>\\1viewname=\"Corrosion Allowance (Theoritical)\"\\2",
+			"",
+			"1,2 48,2 48,48 1,48",
+			"",
+			"<attributes centerX=\"\\1\" centerY=\"\\2\" id=\"\\3\">\n				<attr adjustable=\"1\" crucial=\"0\" name=\"CA\" type=\"0\" viewname=\"Corrosion Allowance\" xmlns=\"http://www.w3.org/1999/xhtml\"/>\n				<attr adjustable=\"1\" crucial=\"0\" name=\"YearRepair\" type=\"0\" viewname=\"Year to Repair\" xmlns=\"http://www.w3.org/1999/xhtml\"/>\n				<attr adjustable=\"1\" crucial=\"0\" name=\"CrackPresent\" type=\"2\" viewname=\"Crack Present\" xmlns=\"http://www.w3.org/1999/xhtml\"/>",
+			"<attributes centerX=\"\\1\" centerY=\"\\2\" id=\"\\3\">\n				<attr adjustable=\"1\" crucial=\"0\" name=\"CA\" type=\"0\" viewname=\"Corrosion Allowance\" xmlns=\"http://www.w3.org/1999/xhtml\"/>\n				<attr adjustable=\"1\" crucial=\"0\" name=\"YearRepair\" type=\"0\" viewname=\"Year to Repair\" xmlns=\"http://www.w3.org/1999/xhtml\"/>\n				<attr adjustable=\"1\" crucial=\"0\" name=\"CrackPresent\" type=\"2\" viewname=\"Crack Present\" xmlns=\"http://www.w3.org/1999/xhtml\"/>\n				<attr adjustable=\"1\" crucial=\"0\" name=\"FlowRate\" type=\"0\" viewname=\"Flow Rate (kg/hour)\" xmlns=\"http://www.w3.org/1999/xhtml\"/>\n				<attr adjustable=\"1\" crucial=\"0\" name=\"Insulasi\" type=\"3\" viewname=\"Insulation\" xmlns=\"http://www.w3.org/1999/xhtml\"/>",
+			"",
+			"\n				<attr adjustable=\"1\" crucial=\"0\" name=\"Insulasi\" type=\"3\" viewname=\"Insulation\" xmlns=\"http://www.w3.org/1999/xhtml\"/>",
+			"",
+			"\n				<attr adjustable=\"1\" crucial=\"0\" name=\"Insulasi\" type=\"1\" viewname=\"Insulation\" xmlns=\"http://www.w3.org/1999/xhtml\"/>",
+			"",
+			"\n				<attr adjustable=\"1\" crucial=\"0\" name=\"Insulasi\" type=\"1\" viewname=\"Insulation\" xmlns=\"http://www.w3.org/1999/xhtml\"/>",
+			"",
+			"<attributes centerX=\"\\1\" centerY=\"\\2\" id=\"\\3\">\n				<attr adjustable=\"1\" crucial=\"0\" name=\"CA\" type=\"0\" viewname=\"Corrosion Allowance\" xmlns=\"http://www.w3.org/1999/xhtml\"/>\n				<attr adjustable=\"1\" crucial=\"0\" name=\"YearRepair\" type=\"0\" viewname=\"Year to Repair\" xmlns=\"http://www.w3.org/1999/xhtml\"/>\n				<attr adjustable=\"1\" crucial=\"0\" name=\"CrackPresent\" type=\"2\" viewname=\"Crack Present\" xmlns=\"http://www.w3.org/1999/xhtml\"/>",
+			"<attributes centerX=\"\\1\" centerY=\"\\2\" id=\"\\3\">\n				<attr adjustable=\"1\" crucial=\"0\" name=\"CA\" type=\"0\" viewname=\"Corrosion Allowance\" xmlns=\"http://www.w3.org/1999/xhtml\"/>\n				<attr adjustable=\"1\" crucial=\"0\" name=\"YearRepair\" type=\"0\" viewname=\"Year to Repair\" xmlns=\"http://www.w3.org/1999/xhtml\"/>\n				<attr adjustable=\"1\" crucial=\"0\" name=\"CrackPresent\" type=\"2\" viewname=\"Crack Present\" xmlns=\"http://www.w3.org/1999/xhtml\"/>\n				<attr adjustable=\"1\" crucial=\"0\" name=\"FlowRate\" type=\"0\" viewname=\"Flow Rate (kg/hour)\" xmlns=\"http://www.w3.org/1999/xhtml\"/>\n				<attr adjustable=\"1\" crucial=\"0\" name=\"Insulasi\" type=\"0\" viewname=\"Insulation\" xmlns=\"http://www.w3.org/1999/xhtml\"/>",
+			"",
+			"raiserror (\\2,16,1)",
+			"",
+			"<attributes centerX=\"\\1\" centerY=\"\\2\" id=\"\\3\">\\n\\t\\t\\t\\t<attr adjustable=\"1\" crucial=\"0\" name=\"CA\" type=\"0\" viewname=\"Corrosion Allowance\" xmlns=\"http://www.w3.org/1999/xhtml\"/>\\n\\t\\t\\t\\t<attr adjustable=\"1\" crucial=\"0\" name=\"YearRepair\" type=\"0\" viewname=\"Year to Repair\" xmlns=\"http://www.w3.org/1999/xhtml\"/>\\n\\t\\t\\t\\t<attr adjustable=\"1\" crucial=\"0\" name=\"CrackPresent\" type=\"2\" viewname=\"Crack Present\" xmlns=\"http://www.w3.org/1999/xhtml\"/>\\n\\t\\t\\t\\t<attr adjustable=\"1\" crucial=\"0\" name=\"FlowRate\" type=\"0\" viewname=\"Flow Rate\" xmlns=\"http://www.w3.org/1999/xhtml\"/>\\n\\t\\t\\t\\t<attr adjustable=\"\\4\"\\5name=\"Insulation\" \\6/>",
+			"<attributes centerX=\"\\1\" centerY=\"\\2\" id=\"\\3\">\\n\\t\\t\\t\\t<attr adjustable=\"1\" crucial=\"0\" name=\"CA\" type=\"0\" viewname=\"Corrosion Allowance\" xmlns=\"http://www.w3.org/1999/xhtml\"/>\\n\\t\\t\\t\\t<attr adjustable=\"1\" crucial=\"0\" name=\"YearRepair\" type=\"0\" viewname=\"Year to Repair\" xmlns=\"http://www.w3.org/1999/xhtml\"/>\\n\\t\\t\\t\\t<attr adjustable=\"\\4\"\\5name=\"CrackPresent\" \\6/>",
+			"",
+			"Year Repair",
+			"",
+			"<attributes>\\n\\t\\t\\t\\t<ca adjustable=\"1\" crucial=\"0\" name=\"CA\" type=\"0\" viewname=\"Corrosion Allowance\" xmlns=\"http://www.w3.org/1999/xhtml\"/>\\n\\t\\t\\t\\t<yearrepair adjustable=\"1\" crucial=\"0\" name=\"YearRepair\" type=\"0\" viewname=\"Year to Repair\" xmlns=\"http://www.w3.org/1999/xhtml\"/>\\n\\t\\t\\t\\t",
+			"<attributes>\\n\\t\\t\\t\\t<attr adjustable=\"1\" crucial=\"0\" name=\"CA\" type=\"0\" viewname=\"Corrosion Allowance\" xmlns=\"http://www.w3.org/1999/xhtml\"/>\\n\\t\\t\\t\\t<attr adjustable=\"1\" crucial=\"0\" name=\"YearRepair\" type=\"0\" viewname=\"Year to Repair\" xmlns=\"http://www.w3.org/1999/xhtml\"/>\\n\\t\\t\\t\\t",
+			"<attributes centerX=\"\\1\" centerY=\"\\2\" id=\"\\3\">\\n\\t\\t\\t\\t<attr adjustable=\"1\" crucial=\"0\" name=\"CA\" type=\"0\" viewname=\"Corrosion Allowance\" xmlns=\"http://www.w3.org/1999/xhtml\"/>\\n\\t\\t\\t\\t<attr adjustable=\"1\" crucial=\"0\" name=\"YearRepair\" type=\"0\" viewname=\"Year to Repair\" xmlns=\"http://www.w3.org/1999/xhtml\"/>\\n\\t\\t\\t\\t",
+			"",
+			"<attributes centerX=\"\\1\" centerY=\"\\2\" id=\"\\3\">\\n\\t\\t\\t\\t<attr adjustable=\"1\" crucial=\"0\" name=\"CA\" type=\"0\" viewname=\"Corrosion Allowance\" xmlns=\"http://www.w3.org/1999/xhtml\"/>\\n\\t\\t\\t\\t<attr adjustable=\"1\" crucial=\"0\" name=\"YearRepair\" type=\"0\" viewname=\"Year to Repair\" xmlns=\"http://www.w3.org/1999/xhtml\"/>\\n\\t\\t\\t\\t<attr adjustable=\"\\4\"\\5name=\"CrackPresent\" \\6/>",
+			"",
+			"H&amp;lt;sub&amp;gt;2&amp;lt;/sub&amp;gt;S In Water",
+			"",
+			"1.59",
+			"18.29",
+			"0.02",
+			"15.12",
+			"0.05",
+			"0.07",
+			"47.82",
+			"0.26",
+			"0.16",
+			"0.834",
+			"7.93",
+			"1000000",
+			"",
+			"<attributes centerX=\"\\1\" centerY=\"\\2\" id=\"\\3\">\\n\\t\\t\\t\\t<attr adjustable=\"1\" crucial=\"0\" name=\"CrackPresent\" type=\"2\" viewname=\"Crack Present\" xmlns=\"http://www.w3.org/1999/xhtml\"/>\\n\\t\\t\\t\\t<attr adjustable=\"1\" crucial=\"0\" name=\"FlowRate\" type=\"0\" viewname=\"Flow Rate\" xmlns=\"http://www.w3.org/1999/xhtml\"/>\\n\\t\\t\\t\\t<attr adjustable=\"\\4\"\\5name=\"Insulasi\" \\6/>",
+			"<attributes centerX=\"\\1\" centerY=\"\\2\" id=\"\\3\">\\n\\t\\t\\t\\t<attr adjustable=\"1\" crucial=\"0\" name=\"CrackPresent\" type=\"2\" viewname=\"Crack Present\" xmlns=\"http://www.w3.org/1999/xhtml\"/>\\n\\t\\t\\t\\t<attr adjustable=\"1\" crucial=\"0\" name=\"FlowRate\" type=\"0\" viewname=\"Flow Rate\" xmlns=\"http://www.w3.org/1999/xhtml\"/>\\n\\t\\t\\t\\t<attr adjustable=\"\\4\" \\5 name=\"Insulasi\" \\6/>",
+			"",
+			"viewname=\"Flow Rate\"",
+			"",
+			"adjustable=\"\\1\" crucial=\"0\" eq",
+			"adjustable=\"\\1\" crucial=\"0\"",
+			"",
+			"<attributes>\n\\t\\t\\t\\t<crackpresent adjustable=\"1\" equ=\"\" name=\"CrackPresent\" type=\"2\" value=\"\" viewname=\"Crack Present\" xmlns=\"http://www.w3.org/1999/xhtml\"/>\n\\t\\t\\t\\t<waterflow adjustable=\"1\" equ=\"\" name=\"WaterFlow\" type=\"0\" value=\"\" viewname=\"Water\" xmlns=\"http://www.w3.org/1999/xhtml\"/>",
+			"<attributes\\1>\n\\t\\t\\t\\t<attr adjustable=\"1\" equ=\"\" name=\"CrackPresent\" type=\"2\" value=\"\" viewname=\"Crack Present\" xmlns=\"http://www.w3.org/1999/xhtml\"/>\n\\t\\t\\t\\t<attr adjustable=\"1\" equ=\"\" name=\"WaterFlow\" type=\"0\" value=\"\" viewname=\"Water Flow\" xmlns=\"http://www.w3.org/1999/xhtml\"/>",
+			"",
+			"&amp;lt;/sub&amp;gt;",
+			"&amp;lt;sub&amp;gt;",
+			"",
+			"<attr adjustable=\"1\" equ=\"\" name=\"CrackPresent\" type=\"2\" value=\"\" viewname=\"Crack Present\" xmlns=\"http://www.w3.org/1999/xhtml\"/>\n\\t\\t\\t\\t<attr adjustable=\"1\" equ=\"\" name=\"Insulasi\" type=\"3\" value=\"\\1\" viewname=\"Insulation\" xmlns=\"http://www.w3.org/1999/xhtml\"/>",
+			"<attr adjustable=\"1\" equ=\"\" name=\"CrackPresent\" type=\"2\" value=\"\" viewname=\"Crack Present\" xmlns=\"http://www.w3.org/1999/xhtml\"/>\n\\t\\t\\t\\t<attr adjustable=\"1\" equ=\"\" name=\"Insulasi\" type=\"3\" value=\"\" viewname=\"Insulation\" xmlns=\"http://www.w3.org/1999/xhtml\"/>",
+			"<attr adjustable=\"1\" equ=\"\" name=\"CrackPresent\" type=\"2\" value=\"\" viewname=\"Crack Present\" xmlns=\"http://www.w3.org/1999/xhtml\"/>\n\\t\\t\\t\\t<attr adjustable=\"1\" equ=\"\" name=\"Insulasi\" type=\"3\" value=\"\\1\" viewname=\"Insulation\" xmlns=\"http://www.w3.org/1999/xhtml\"/>",
+			"<attr adjustable=\"1\" equ=\"\" name=\"CrackPresent\" type=\"2\" value=\"\" viewname=\"Crack Present\" xmlns=\"http://www.w3.org/1999/xhtml\"/>\n<attr adjustable=\"1\" equ=\"\" name=\"Insulasi\" type=\"3\" value=\"\\1\" viewname=\"Insulation\" xmlns=\"http://www.w3.org/1999/xhtml\"/>",
+			"<attr adjustable=\"1\" equ=\"\" name=\"CrackPresent\" type=\"2\" value=\"\" viewname=\"Crack Present\" xmlns=\"http://www.w3.org/1999/xhtml\"/>\n<attr adjustable=\"1\" equ=\"\" name=\"Insulasi\" type=\"3\" value=\"\\0\" viewname=\"Insulation\" xmlns=\"http://www.w3.org/1999/xhtml\"/>"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/E/Informatics/Proyek/Rekadia/Gathering PO/Template.sublime-project",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 150,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								32,
+								32
+							]
+						],
+						"settings":
+						{
+							"auto_name": "{",
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "WebUI/Models/CompanyFormStub.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 908,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								381,
+								381
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C#/C#.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "WebUI/Views/Log/Index.cshtml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4714,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.variable_get":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "Template.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 266.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

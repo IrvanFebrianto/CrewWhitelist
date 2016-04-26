@@ -1,0 +1,72 @@
+﻿@model WebUI.Models.Crew.CrewAdminFormStub
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    string currentController = (string)ViewContext.RouteData.Values["controller"];
+    string currentAction = (string)ViewContext.RouteData.Values["action"];
+    string backLink = "";
+
+    if (currentAction == "CreateCrew")
+    {
+        ViewBag.Title = "Add Crew";
+    }
+    else
+    {
+        ViewBag.Title = ViewBag.name + "Edit";
+    }
+    backLink = Url.Action("IndexAdmin");
+}
+
+<div class="page-header">
+    <h1>@ViewBag.Title</h1>
+</div>
+@using (@Html.BeginForm(currentAction, currentController, FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(model => model.barcode)
+    @Html.HiddenFor(model => model.assignDate)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.crewName, new { @class = "col-xs-2 control-label" })
+        <div class="col-xs-4">
+            @Html.EditorFor(model => model.crewName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.crewName)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.crewStatus, new { @class = "col-xs-2 control-label" })
+        <div class="col-xs-4">
+            @Html.EditorFor(model => model.crewStatus, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.crewStatus)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.crewAirport, new { @class = "col-xs-2 control-label" })
+        <div class="col-xs-4">
+            @Html.EditorFor(model => model.crewAirport, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.crewAirport)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.companyAirways, new { @class = "col-xs-2 control-label" })
+        <div class="col-xs-4">
+            @Html.EditorFor(model => model.companyAirways, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.companyAirways)
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-xs-offset-2 col-xs-10">
+            <button type="submit" class="btn btn-primary">Save</button>
+            <a href="@backLink" class="btn btn-link">Cancel</a>
+        </div>
+    </div>
+}
+
+@section scripts
+    {
+    <script type="text/javascript">
+		// scripts here
+    </script>
+}
+
+
+

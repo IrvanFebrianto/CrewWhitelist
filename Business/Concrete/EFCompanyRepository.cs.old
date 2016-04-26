@@ -1,0 +1,124 @@
+﻿using Business.Abstract;
+using Business.Entities;
+using Business.Infrastructure;
+using Business.Linq;
+using Common.Enums;
+using System;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Business.Concrete
+{
+    public class EFCompanyRepository : ICompanyRepository
+    {
+        private Entities.UserManagement context = new Entities.UserManagement();
+
+        #region company
+
+        /// <summary>
+        /// find where !is_delete
+        /// </summary>
+        /// <param name="skip"></param>
+        /// <param name="take"></param>
+        /// <param name="sortings"></param>
+        /// <param name="filters"></param>
+        /// <returns></returns>
+        public List<company> Find(int? skip = null, int? take = null, List<SortingInfo> sortings = null, FilterInfo filters = null)
+        {
+            IQueryable<company> list = context.company;
+
+            if (filters != null && (filters.Filters != null && filters.Filters.Count > 0))
+            {
+                filters.FormatFieldToUnderscore();
+                GridHelper.ProcessFilters<company>(filters, ref list);
+            }
+
+            if (sortings != null && sortings.Count > 0)
+            {
+                foreach (var s in sortings)
+                {
+                    s.FormatSortOnToUnderscore();
+                    list = list.OrderBy<company>(s.SortOn + " " + s.SortOrder);
+                }
+            }
+            else
+            {
+                list = list.OrderByDescending(m => m.id); //default, wajib ada atau EF error
+            }
+
+            //filter
+            list = list.Where(i => i.is_delete == false);
+
+            //take & skip
+            var takeList = list;
+            if (skip != null)
+            {
+                takeList = takeList.Skip(skip.Value);
+            }
+            if (take != null)
+            {
+                takeList = takeList.Take(take.Value);
+            }
+
+            //return result
+            List<company> result = takeList.ToList();
+            return result;
+        }
+
+        public company FindByPk(int id)
+        {
+            return context.company.Where(m => (m.id == id && m.is_delete == false)).FirstOrDefault();
+        }
+
+        /// <summary>
+        /// count where !is_delete
+        /// </summary>
+        /// <param name="filters"></param>
+        /// <returns></returns>
+        public int Count(FilterInfo filters = null)
+        {
+            IQueryable<company> items = context.company;
+
+            if (filters != null && (filters.Filters != null && filters.Filters.Count > 0))
+            {
+                GridHelper.ProcessFilters<company>(filters, ref items);
+            }
+
+            int count = items.Where(m => m.is_delete == false).Count();
+
+            return count;
+        }
+
+        public void Save(company dbItem)
+        {
+            if (dbItem.id == 0) //create
+            {                
+                dbItem.is_delete = false;
+
+                context.company.Add(dbItem);
+            }
+            else //edit
+            {
+                context.company.Attach(dbItem);
+
+                var entry = context.Entry(dbItem);
+                entry.State = EntityState.Modified;
+
+                //field yang tidak ditentukan oleh user
+                entry.Property(e => e.is_delete).IsModified = false;
+            }
+            context.SaveChanges();
+        }
+
+        public void Delete(company dbItem)
+        {
+            dbItem.is_delete = true;
+            context.SaveChanges();
+        }
+
+        #endregion
+    }
+}

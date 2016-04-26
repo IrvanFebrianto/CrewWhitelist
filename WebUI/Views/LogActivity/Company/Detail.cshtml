@@ -1,0 +1,205 @@
+﻿@using WebUI.Extension
+@using WebUI.Areas.Product.Models;
+@model ProductCompanyPresentationStub
+
+@{
+    ViewBag.Title = Model.Name;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var currentController = (WebUI.Areas.Product.Controllers.CompanyController)ViewContext.Controller;
+}
+
+<div class="page-header">
+	<div class="btn-group pull-right">
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-default" })
+	</div>
+	<h1>@ViewBag.Title</h1>
+</div>
+
+@Html.Raw(currentController.GetMessage())
+
+<div class="row">
+	<div class="col-xs-6">
+		<div>@Model.Address</div>
+		<div>Nomor Telepon: @Model.Phone</div>
+		<div>Nomor Telepon (MSDS): @Model.PhoneMSDS</div>
+	</div>
+	<div class="col-xs-6">
+		<div class="panel panel-default">
+	        <div class="panel-heading">
+		        <h3 class="panel-title">Produk</h3>
+            </div>
+			<div class="panel-body">
+                @if(Model.Products.Count() > 0){
+				<table class="table table-bordered table-no-bottom">
+					<thead>
+						<tr>
+							<th>Nama</th>
+							<th>Produksi Terakhir</th>
+						</tr>
+					</thead>
+                    @foreach (ProductPresentationStub row in Model.Products)
+                    {
+					<tr>
+						<td>@row.Name</td>
+						<td>@row.LastProductionDate</td>
+					</tr>
+                    }
+				</table>
+                }else{
+                <p>No items to display.</p>
+                }
+			</div>
+		</div>
+	</div>
+</div>
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title">Produksi</h3>
+    </div>
+	<div class="panel-body">
+        @if(Model.Productions.Count() > 0){
+		<table class="table table-bordered table-no-bottom">
+			<thead>
+				<tr>
+					<th>Produk</th>
+					<th>Bulan</th>
+					<th>Produksi</th>
+				</tr>
+			</thead>
+            @foreach (ProductionPresentationStub row in Model.Productions)
+            {
+			<tr>
+				<td>@row.Name</td>
+				<td>@row.ProductionDate</td>
+				<td class="text-right">@row.Value</td>
+			</tr>
+            }
+		</table>
+        }else{
+        <p>No items to display.</p>
+        }
+	</div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading panel-heading-action clearfix">
+		<h3 class="panel-title pull-left">MSDS</h3>
+        <div class="btn-group pull-right">
+            @Html.ActionLink("Upload MSDS", "Upload", new { companyId = Model.Id }, new { @class = "btn btn-default" })
+        </div>
+	</div>
+	<div class="panel-body">
+        <div id="msds-grid"></div>
+	</div>
+</div>
+
+@section scripts
+{
+<script type="text/javascript">
+    var monthOptions = @Html.Raw(Model.MonthOptionsStr);
+
+    //filter
+    function typeFilterMonth(element) {
+        element.kendoDropDownList({
+            dataTextField: "Text",
+            dataValueField: "Value",
+            dataSource: {
+                data: monthOptions
+            },
+            optionLabel: "--Select Value--",
+        });
+    }
+
+    //delete msds
+    function deleteItem(e) {
+        e.preventDefault();
+        var data = this.dataItem(getDataRowGrid(e));
+        goToDeletePage('@Url.Action("DeleteMSDS")' + "?id=" + data.Id);
+    }
+
+    //download link
+    function createDownloadUrl(filePath) {
+        if (filePath != null) {
+            var a = $('<a><span class="glyphicon glyphicon-download"></span></a>');
+            var href = filePath;
+            a.attr('href', href);
+            return a.outerHTML();
+        } else {
+            return "";
+        }
+    }
+
+    $(document).ready(function () {
+        $("#msds-grid").kendoGrid({
+            dataSource: {
+                transport: {
+                    read: {
+                        url: "@Url.Action("BindingMSDS")",
+                        dataType: "json",
+                    },
+                },
+                schema: {
+                    data: "data",
+                    total: "total",
+                },
+                pageSize: 5,
+                serverPaging: true,
+                serverFiltering: true,
+                serverSorting: true,
+                filter: { field: "ProductCompanyId", operator: "eq", value: "@Model.Id" },
+                //sort: { field: "Id", dir: "desc" },
+            },
+            //dataBound: function(e){
+            //    var gridSelector = "#weekly-report-grid";
+            //    var grid = $(gridSelector).data("kendoGrid");
+            //    var gridData = grid.dataSource.view();
+            //},
+            filterable: true,
+            pageable: true,
+            sortable: true,
+            columns: [
+                {
+                    field: "ProductName",
+                    title: "Produk",
+                },
+                {
+                    field: "Year",
+                    title: "Tahun",
+                },
+                {
+                    field: "Month",
+                    title: "Bulan",
+                    template: "#= MonthStr #",
+                    filterable: {
+                        ui: typeFilterMonth,
+                        operators: {
+                            int: {
+                                eq: "Is equal to",
+                            }
+                        },
+                        extra: false,
+                    },
+                },
+                {
+                    field: "FilePath",
+                    title: "MSDS",
+                    template: "#= createDownloadUrl(FilePath) #",
+                    filterable: false,
+                    sortable: false
+                },
+                {
+                    command: [
+                        {
+                            name: "delete",
+                            text: "delete",
+                            click: deleteItem,
+                            imageClass: "glyphicon glyphicon-remove",
+                            template: '<a class="k-button-icon #=className#" #=attr# href="\\#"><span class="#=iconClass# #=imageClass#"></span></a>'
+                        }
+                    ],
+                    width: "50px"
+                }
+            ],
+        });
+    });
+</script>
+}

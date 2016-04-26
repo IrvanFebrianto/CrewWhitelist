@@ -1,0 +1,130 @@
+﻿@using WebUI.Extension;
+@using MvcSiteMapProvider.Web.Html;
+@{
+    ViewBag.Title = "Crew List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var currentController = (WebUI.Controllers.CrewController)ViewContext.Controller;
+}
+<div class="page-header">
+    <div class="btn-group pull-right">
+        @Html.ActionLink("Add Crew", "CreateCrew", new { area = "" }, new { @class = "btn btn-default" })
+    </div>
+    <div class="btn-group pull-right">
+        @Html.ActionLink("LogOut", "LogOut", new { area = "" }, new { @class = "btn btn-default" })
+    </div>
+    <h1>@ViewBag.Title</h1>
+</div>
+@Html.Raw(currentController.GetMessage())
+<div id="grid"></div>
+
+@section scripts
+    {
+    <script type="text/javascript">
+
+        function deleteItem(e) {
+            e.preventDefault();
+            var data = this.dataItem(getDataRowGrid(e));
+            goToDeletePage('@Url.Action("DeleteCrew")' + "?barcode=" + data.barcode, this.dataSource);
+        }
+
+        function editItem(e) {
+            e.preventDefault();
+            var data = this.dataItem(getDataRowGrid(e));
+            window.location.href = "@Url.Action("EditCrew")" + "?barcode=" + data.barcode;
+        }
+
+        $(document).ready(function () {
+
+            var ds = {
+                pageable: true,
+                pageSize: 10,
+                serverFiltering: true,
+                serverPaging: true,
+                serverSorting: true,
+                sortable: true,
+                transport: {
+                    read: {
+                        url: "@Url.Action("BindingCrew")",
+                        dataType: "json",
+                        type: "POST",
+                    },
+                    parameterMap: function (options, operation) {
+                        if (operation !== "read" && options != '') {
+                            return kendo.stringify(options);
+                        }
+                        else if (operation == "read") {
+                            return options;
+                        }
+                    }
+                },
+                schema: {
+                    data: "data",
+                    total: "total",
+                    model: {
+                        fields: {
+                            "barcode": { type: "string" },
+                            "crewName": { type: "string" },
+                            "assignDate": { type: "date" },
+                            "crewStatus": { type: "string" },
+                            "crewAirport": { type: "string" },
+                            "companyAirways": { type: "string" },
+                        }
+                    }
+                },
+            };
+
+            $("#grid").kendoGrid({
+                dataSource: ds,
+                filterable: true,
+                pageable: true,
+                sortable: true,
+                columns: [
+                    {
+                        field: "barcode",
+                        title: "Barcode",
+                    },
+					{
+					    field: "crewName",
+					    title: "Crew Name",
+					},
+                    {
+                        field: "assignDate",
+                        title: "Assign Date",
+                    },
+					{
+					    field: "crewStatus",
+					    title: "Crew Status",
+					},
+					{
+					    field: "crewAirport",
+					    title: "Crew Airport",
+					},
+					{
+					    field: "companyAirways",
+					    title: "Company Airways",
+					},
+                    {
+                        command: [
+                            {
+                                name: "edit",
+                                text: "edit",
+                                click: editItem,
+                                imageClass: "glyphicon glyphicon-edit",
+                                template: '<a class="k-button-icon #=className#" #=attr# href="\\#"><span class="#=imageClass#"></span></a>'
+                            },
+                            {
+                                name: "delete",
+                                text: "delete",
+                                click: deleteItem,
+                                imageClass: "glyphicon glyphicon-remove",
+                                template: '<a class="k-button-icon #=className#" #=attr# href="\\#"><span class="#=iconClass# #=imageClass#"></span></a>'
+                            }
+                        ],
+                        width: "90px"
+                    }
+                ],
+            });
+        });
+    </script>
+}
+

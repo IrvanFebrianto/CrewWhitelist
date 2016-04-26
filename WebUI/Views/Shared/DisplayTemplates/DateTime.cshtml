@@ -1,0 +1,26 @@
+﻿@model DateTime?
+@{
+    string dt;
+    ManagementUser.Infrastructure.DisplayFormatHelper dfh = new ManagementUser.Infrastructure.DisplayFormatHelper();
+    bool isExist = ViewData["dateFormat"] != null;
+    string dateFormat;
+
+    if (isExist)
+    {
+        dateFormat = ViewData["dateFormat"].ToString();
+    }
+    else
+    {
+        dateFormat = dfh.FullDateFormat;
+    }
+}
+
+@if (Model != null)
+{
+    dt = Model.Value.ToString(dateFormat);
+}
+else
+{
+    dt = "-";
+}
+@Html.Label("", dt, ViewData["htmlAttributes"])

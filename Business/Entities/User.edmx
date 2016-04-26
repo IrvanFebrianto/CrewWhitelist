@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="crew_whitelistModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="crew">
+          <Key>
+            <PropertyRef Name="barcode" />
+          </Key>
+          <Property Name="barcode" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="crew_name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="assign_date" Type="date" Nullable="false" />
+          <Property Name="crew_status" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="crew_airport" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="company_airways" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="crew_whitelist">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="barcode" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="start_date" Type="date" Nullable="false" />
+          <Property Name="end_date" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="user_role">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="username" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="password" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="role" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_crew_whitelist_crew">
+          <End Role="crew" Type="Self.crew" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="crew_whitelist" Type="Self.crew_whitelist" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="crew">
+              <PropertyRef Name="barcode" />
+            </Principal>
+            <Dependent Role="crew_whitelist">
+              <PropertyRef Name="barcode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="crew_whitelistModelStoreContainer">
+          <EntitySet Name="crew" EntityType="Self.crew" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="crew_whitelist" EntityType="Self.crew_whitelist" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="user_role" EntityType="Self.user_role" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_crew_whitelist_crew" Association="Self.FK_crew_whitelist_crew">
+            <End Role="crew" EntitySet="crew" />
+            <End Role="crew_whitelist" EntitySet="crew_whitelist" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="crew_whitelistModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="user_role">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="role" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="crew_whitelistEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="user_role" EntityType="Self.user_role" />
+          <EntitySet Name="crews" EntityType="crew_whitelistModel.crew" />
+          <EntitySet Name="crew_whitelist" EntityType="crew_whitelistModel.crew_whitelist" />
+          <AssociationSet Name="FK_crew_whitelist_crew" Association="crew_whitelistModel.FK_crew_whitelist_crew">
+            <End Role="crew" EntitySet="crews" />
+            <End Role="crew_whitelist" EntitySet="crew_whitelist" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="crew">
+          <Key>
+            <PropertyRef Name="barcode" />
+          </Key>
+          <Property Name="barcode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="crew_name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="assign_date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="crew_status" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="crew_airport" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="company_airways" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="crew_whitelist" Relationship="crew_whitelistModel.FK_crew_whitelist_crew" FromRole="crew" ToRole="crew_whitelist" />
+        </EntityType>
+        <EntityType Name="crew_whitelist">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="barcode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="start_date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="end_date" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="crew" Relationship="crew_whitelistModel.FK_crew_whitelist_crew" FromRole="crew_whitelist" ToRole="crew" />
+        </EntityType>
+        <Association Name="FK_crew_whitelist_crew">
+          <End Type="crew_whitelistModel.crew" Role="crew" Multiplicity="1" />
+          <End Type="crew_whitelistModel.crew_whitelist" Role="crew_whitelist" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="crew">
+              <PropertyRef Name="barcode" />
+            </Principal>
+            <Dependent Role="crew_whitelist">
+              <PropertyRef Name="barcode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="crew_whitelistModelStoreContainer" CdmEntityContainer="crew_whitelistEntities">
+          <EntitySetMapping Name="user_role">
+            <EntityTypeMapping TypeName="crew_whitelistModel.user_role">
+              <MappingFragment StoreEntitySet="user_role">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="role" ColumnName="role" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="crews">
+            <EntityTypeMapping TypeName="crew_whitelistModel.crew">
+              <MappingFragment StoreEntitySet="crew">
+                <ScalarProperty Name="company_airways" ColumnName="company_airways" />
+                <ScalarProperty Name="crew_airport" ColumnName="crew_airport" />
+                <ScalarProperty Name="crew_status" ColumnName="crew_status" />
+                <ScalarProperty Name="assign_date" ColumnName="assign_date" />
+                <ScalarProperty Name="crew_name" ColumnName="crew_name" />
+                <ScalarProperty Name="barcode" ColumnName="barcode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="crew_whitelist">
+            <EntityTypeMapping TypeName="crew_whitelistModel.crew_whitelist">
+              <MappingFragment StoreEntitySet="crew_whitelist">
+                <ScalarProperty Name="end_date" ColumnName="end_date" />
+                <ScalarProperty Name="start_date" ColumnName="start_date" />
+                <ScalarProperty Name="barcode" ColumnName="barcode" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,227 @@
+@model WebUI.Models.MProject.MProjectFormStub
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    string currentController = (string)ViewContext.RouteData.Values["controller"];
+    string currentAction = (string)ViewContext.RouteData.Values["action"];
+    string backLink = "";
+
+    if (currentAction == "Create")
+    {
+        ViewBag.Title = "Add M Project";
+    }
+    else
+    {
+        ViewBag.Title = ViewBag.name + " | Edit";
+    }
+    backLink = Url.Action("Index");
+}
+
+<div class="page-header">
+    <h1>@ViewBag.Title</h1>
+</div>
+@using (@Html.BeginForm(currentAction, currentController, FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(model => model.Id)
+
+	<div class="form-group">
+	    @Html.LabelFor(model => model.Name, new { @class = "col-xs-2 control-label" })
+	    <div class="col-xs-6">
+            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", style = "" } })
+            @Html.ValidationMessageFor(model => model.Name)
+	    </div>
+    </div>
+	<div class="form-group">
+	    @Html.LabelFor(model => model.ContractorId, new { @class = "col-xs-2 control-label" })
+	    <div class="col-xs-6">
+            @Html.DropDownListFor(model => model.ContractorId, new SelectList(Model.ContractorOptions, "Value", "Text"), new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.ContractorId)
+	    </div>
+    </div>
+
+	<div class="form-group">
+	    @Html.LabelFor(model => model.Photo, new { @class = "col-xs-2 control-label" })
+	    <div class="col-xs-6">
+            @Html.EditorFor(model => model.Photo, new { htmlAttributes = new { @class = "form-control", style = "" } })
+            @Html.ValidationMessageFor(model => model.Photo)
+	    </div>
+    </div>
+	<div class="form-group">
+	    @Html.LabelFor(model => model.Description, new { @class = "col-xs-2 control-label" })
+	    <div class="col-xs-6">
+            @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control", style = "" } })
+            @Html.ValidationMessageFor(model => model.Description)
+	    </div>
+    </div>
+	<div class="form-group">
+	    @Html.LabelFor(model => model.StartDate, new { @class = "col-xs-2 control-label" })
+	    <div class="col-xs-6">
+            @Html.EditorFor(model => model.StartDate, new { htmlAttributes = new { @class = "form-control-datepicker", style = "width:100%" } })
+            @Html.ValidationMessageFor(model => model.StartDate)
+	    </div>
+    </div>
+	<div class="form-group">
+	    @Html.LabelFor(model => model.FinishDate, new { @class = "col-xs-2 control-label" })
+	    <div class="col-xs-6">
+            @Html.EditorFor(model => model.FinishDate, new { htmlAttributes = new { @class = "form-control-datepicker", style = "width:100%" } })
+            @Html.ValidationMessageFor(model => model.FinishDate)
+	    </div>
+    </div>
+	<div class="form-group">
+	    @Html.LabelFor(model => model.Highlight, new { @class = "col-xs-2 control-label" })
+	    <div class="col-xs-6">
+            @Html.EditorFor(model => model.Highlight, new { htmlAttributes = new { @class = "form-control", style = "" } })
+            @Html.ValidationMessageFor(model => model.Highlight)
+	    </div>
+    </div>
+	<div class="form-group">
+	    @Html.LabelFor(model => model.ProjectStage, new { @class = "col-xs-2 control-label" })
+	    <div class="col-xs-6">
+            @Html.EditorFor(model => model.ProjectStage, new { htmlAttributes = new { @class = "form-control", style = "" } })
+            @Html.ValidationMessageFor(model => model.ProjectStage)
+	    </div>
+    </div>
+	<div class="form-group">
+	    @Html.LabelFor(model => model.Status, new { @class = "col-xs-2 control-label" })
+	    <div class="col-xs-6">
+            @Html.EditorFor(model => model.Status, new { htmlAttributes = new { @class = "form-control-numeric", style = "width:100%" } })
+            @Html.ValidationMessageFor(model => model.Status)
+	    </div>
+    </div>
+	<div class="form-group">
+	    @Html.LabelFor(model => model.Budget, new { @class = "col-xs-2 control-label" })
+	    <div class="col-xs-6">
+            @Html.EditorFor(model => model.Budget, new { htmlAttributes = new { @class = "form-control-numeric", style = "width:100%" } })
+            @Html.ValidationMessageFor(model => model.Budget)
+	    </div>
+    </div>
+	<div class="form-group">
+	    @Html.LabelFor(model => model.Currency, new { @class = "col-xs-2 control-label" })
+	    <div class="col-xs-6">
+            @Html.EditorFor(model => model.Currency, new { htmlAttributes = new { @class = "form-control", style = "" } })
+            @Html.ValidationMessageFor(model => model.Currency)
+	    </div>
+    </div>
+	<div class="form-group">
+	    @Html.LabelFor(model => model.Num, new { @class = "col-xs-2 control-label" })
+	    <div class="col-xs-6">
+            @Html.EditorFor(model => model.Num, new { htmlAttributes = new { @class = "form-control-numeric", style = "width:100%" } })
+            @Html.ValidationMessageFor(model => model.Num)
+	    </div>
+    </div>
+	<div class="form-group">
+	    @Html.LabelFor(model => model.PmcId, new { @class = "col-xs-2 control-label" })
+	    <div class="col-xs-6">
+            @Html.EditorFor(model => model.PmcId, new { htmlAttributes = new { @class = "form-control-numeric", style = "width:100%" } })
+            @Html.ValidationMessageFor(model => model.PmcId)
+	    </div>
+    </div>
+	<div class="form-group">
+	    @Html.LabelFor(model => model.Summary, new { @class = "col-xs-2 control-label" })
+	    <div class="col-xs-6">
+            @Html.EditorFor(model => model.Summary, new { htmlAttributes = new { @class = "form-control", style = "" } })
+            @Html.ValidationMessageFor(model => model.Summary)
+	    </div>
+    </div>
+	<div class="form-group">
+	    @Html.LabelFor(model => model.CompanyId, new { @class = "col-xs-2 control-label" })
+	    <div class="col-xs-6">
+            @Html.DropDownListFor(model => model.CompanyId, new SelectList(Model.CompanyOptions, "Value", "Text"), new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.CompanyId)
+	    </div>
+    </div>
+
+	<div class="form-group">
+	    @Html.LabelFor(model => model.StatusNonTechnical, new { @class = "col-xs-2 control-label" })
+	    <div class="col-xs-6">
+            @Html.EditorFor(model => model.StatusNonTechnical, new { htmlAttributes = new { @class = "form-control", style = "" } })
+            @Html.ValidationMessageFor(model => model.StatusNonTechnical)
+	    </div>
+    </div>
+	<div class="form-group">
+	    @Html.LabelFor(model => model.IsCompleted, new { @class = "col-xs-2 control-label" })
+	    <div class="col-xs-6">
+            @Html.EditorFor(model => model.IsCompleted, new { htmlAttributes = new { @class = "form-control", style = "" } })
+            @Html.ValidationMessageFor(model => model.IsCompleted)
+	    </div>
+    </div>
+	<div class="form-group">
+	    @Html.LabelFor(model => model.CompletedDate, new { @class = "col-xs-2 control-label" })
+	    <div class="col-xs-6">
+            @Html.EditorFor(model => model.CompletedDate, new { htmlAttributes = new { @class = "form-control-datepicker", style = "width:100%" } })
+            @Html.ValidationMessageFor(model => model.CompletedDate)
+	    </div>
+    </div>
+	<div class="form-group">
+	    @Html.LabelFor(model => model.ProjectId, new { @class = "col-xs-2 control-label" })
+	    <div class="col-xs-6">
+            @Html.DropDownListFor(model => model.ProjectId, new SelectList(Model.ProjectOptions, "Value", "Text"), new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.ProjectId)
+	    </div>
+    </div>
+
+	<div class="form-group">
+	    @Html.LabelFor(model => model.SubmitForApprovalTime, new { @class = "col-xs-2 control-label" })
+	    <div class="col-xs-6">
+            @Html.EditorFor(model => model.SubmitForApprovalTime, new { htmlAttributes = new { @class = "form-control-datepicker", style = "width:100%" } })
+            @Html.ValidationMessageFor(model => model.SubmitForApprovalTime)
+	    </div>
+    </div>
+	<div class="form-group">
+	    @Html.LabelFor(model => model.ApprovalStatus, new { @class = "col-xs-2 control-label" })
+	    <div class="col-xs-6">
+            @Html.EditorFor(model => model.ApprovalStatus, new { htmlAttributes = new { @class = "form-control", style = "" } })
+            @Html.ValidationMessageFor(model => model.ApprovalStatus)
+	    </div>
+    </div>
+	<div class="form-group">
+	    @Html.LabelFor(model => model.ApprovalTime, new { @class = "col-xs-2 control-label" })
+	    <div class="col-xs-6">
+            @Html.EditorFor(model => model.ApprovalTime, new { htmlAttributes = new { @class = "form-control-datepicker", style = "width:100%" } })
+            @Html.ValidationMessageFor(model => model.ApprovalTime)
+	    </div>
+    </div>
+	<div class="form-group">
+	    @Html.LabelFor(model => model.Deleted, new { @class = "col-xs-2 control-label" })
+	    <div class="col-xs-6">
+            @Html.EditorFor(model => model.Deleted, new { htmlAttributes = new { @class = "form-control", style = "" } })
+            @Html.ValidationMessageFor(model => model.Deleted)
+	    </div>
+    </div>
+	<div class="form-group">
+	    @Html.LabelFor(model => model.ApprovalMessage, new { @class = "col-xs-2 control-label" })
+	    <div class="col-xs-6">
+            @Html.EditorFor(model => model.ApprovalMessage, new { htmlAttributes = new { @class = "form-control", style = "" } })
+            @Html.ValidationMessageFor(model => model.ApprovalMessage)
+	    </div>
+    </div>
+	<div class="form-group">
+	    @Html.LabelFor(model => model.StatusTechnical, new { @class = "col-xs-2 control-label" })
+	    <div class="col-xs-6">
+            @Html.EditorFor(model => model.StatusTechnical, new { htmlAttributes = new { @class = "form-control", style = "" } })
+            @Html.ValidationMessageFor(model => model.StatusTechnical)
+	    </div>
+    </div>
+	<div class="form-group">
+	    @Html.LabelFor(model => model.ScurveData, new { @class = "col-xs-2 control-label" })
+	    <div class="col-xs-6">
+            @Html.EditorFor(model => model.ScurveData, new { htmlAttributes = new { @class = "form-control", style = "" } })
+            @Html.ValidationMessageFor(model => model.ScurveData)
+	    </div>
+    </div>
+
+    <div class="form-group">
+		<div class="col-xs-offset-2 col-xs-10">
+			<button type="submit" class="btn btn-primary">Save</button>
+			<a href="@backLink" class="btn btn-link">Cancel</a>
+		</div>
+	</div>
+}
+
+@section scripts
+    {
+    <script type="text/javascript">
+		// scripts here
+    </script>
+}
+

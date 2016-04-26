@@ -1,0 +1,266 @@
+@using WebUI.Extension;
+@using MvcSiteMapProvider.Web.Html;
+@{
+    ViewBag.Title = "M Project";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var currentController = (WebUI.Controllers.MProjectController)ViewContext.Controller;
+}
+<div class="page-header">
+    <div class="btn-group pull-right">
+        @Html.ActionLink("Add M Project", "Create", new { area = "" }, new { @class = "btn btn-default" })
+		@Html.ActionLink("Upload Excel", "ImportExcel", new { area = "" }, new { @class = "btn btn-default" })
+    </div>
+    <h1>@ViewBag.Title</h1>
+</div>
+@Html.Raw(currentController.GetMessage())
+<div id="grid"></div>
+
+@section scripts
+    {
+    <script type="text/javascript">
+
+        function deleteItem(e) {
+            e.preventDefault();
+            var data = this.dataItem(getDataRowGrid(e));
+            goToDeletePage('@Url.Action("Delete")' + "?id=" + data.Id,this.dataSource);
+        }
+
+        function editItem(e) {
+            e.preventDefault();
+            var data = this.dataItem(getDataRowGrid(e));
+            window.location.href = "@Url.Action("Edit")" + "?id=" + data.Id;
+        }
+
+        $(document).ready(function () {
+
+            var ds = {
+                pageable: true,
+                pageSize: 10,
+                serverFiltering: true,
+                serverPaging: true,
+                serverSorting: true,
+                sortable:true,
+                transport: {
+                    read: {
+                        url: "@Url.Action("Binding")",
+                        dataType: "json",
+                        type:"POST",
+                    },
+                    parameterMap: function (options, operation) {
+                        if (operation !== "read" && options != '') {
+                            return kendo.stringify(options);
+                        }
+                        else if (operation == "read") {
+							if (options.filter) {
+                                filter = options.filter.filters;
+                                for (var i in filter) {
+									if (filter[i].field == "CompanyName") {
+                                        filter[i].field = "company.name";
+                                    }
+									if (filter[i].field == "ContractorName") {
+                                        filter[i].field = "contractor.name";
+                                    }
+									if (filter[i].field == "ProjectName") {
+                                        filter[i].field = "project.name";
+                                    }
+                                }
+                            }
+
+                            if (options.sort) {
+                                sort = options.sort;
+                                for (var i in sort) {
+									if (sort[i].field == "CompanyName") {
+                                        sort[i].field = "company.name";
+                                    }
+									if (sort[i].field == "ContractorName") {
+                                        sort[i].field = "contractor.name";
+                                    }
+									if (sort[i].field == "ProjectName") {
+                                        sort[i].field = "project.name";
+                                    }
+                                }
+                            }
+                            return options;
+                        }
+                    }
+                },
+				schema: {
+                    data: "data",
+                    total: "total",
+                    model: {
+                        fields: {
+							"Id": { type: "number" },
+							"Name": { type: "string" },
+							"ContractorId": { type: "number" },
+							"Photo": { type: "string" },
+							"Description": { type: "string" },
+							"StartDate": { type: "date" },
+							"FinishDate": { type: "date" },
+							"Highlight": { type: "boolean" },
+							"ProjectStage": { type: "string" },
+							"Status": { type: "number" },
+							"Budget": { type: "number" },
+							"Currency": { type: "string" },
+							"Num": { type: "number" },
+							"PmcId": { type: "number" },
+							"Summary": { type: "string" },
+							"CompanyId": { type: "number" },
+							"StatusNonTechnical": { type: "string" },
+							"IsCompleted": { type: "boolean" },
+							"CompletedDate": { type: "date" },
+							"ProjectId": { type: "number" },
+							"SubmitForApprovalTime": { type: "date" },
+							"ApprovalStatus": { type: "string" },
+							"ApprovalTime": { type: "date" },
+							"Deleted": { type: "boolean" },
+							"ApprovalMessage": { type: "string" },
+							"StatusTechnical": { type: "string" },
+							"ScurveData": { type: "string" },
+							"CompanyName": { type: "string" },
+							"ContractorName": { type: "string" },
+							"ProjectName": { type: "string" },
+                        }
+                    }
+                },
+            };
+
+            $("#grid").kendoGrid({
+                dataSource: ds,
+                filterable: true,
+                pageable: true,
+                sortable: true,
+                resizable: true,
+                columns: [
+					{
+                        field: "Id",
+                        title: "Id",
+                    },
+					{
+                        field: "Name",
+                        title: "Name",
+                    },
+					{
+                        field: "Photo",
+                        title: "Photo",
+                    },
+					{
+                        field: "Description",
+                        title: "Description",
+                    },
+					{
+                        field: "StartDate",
+                        title: "Start Date",
+                    },
+					{
+                        field: "FinishDate",
+                        title: "Finish Date",
+                    },
+					{
+                        field: "Highlight",
+                        title: "Highlight",
+                    },
+					{
+                        field: "ProjectStage",
+                        title: "Project Stage",
+                    },
+					{
+                        field: "Status",
+                        title: "Status",
+                    },
+					{
+                        field: "Budget",
+                        title: "Budget",
+                    },
+					{
+                        field: "Currency",
+                        title: "Currency",
+                    },
+					{
+                        field: "Num",
+                        title: "Num",
+                    },
+					{
+                        field: "PmcId",
+                        title: "Pmc Id",
+                    },
+					{
+                        field: "Summary",
+                        title: "Summary",
+                    },
+					{
+                        field: "StatusNonTechnical",
+                        title: "Status Non Technical",
+                    },
+					{
+                        field: "IsCompleted",
+                        title: "Is Completed",
+                    },
+					{
+                        field: "CompletedDate",
+                        title: "Completed Date",
+                    },
+					{
+                        field: "SubmitForApprovalTime",
+                        title: "Submit For Approval Time",
+                    },
+					{
+                        field: "ApprovalStatus",
+                        title: "Approval Status",
+                    },
+					{
+                        field: "ApprovalTime",
+                        title: "Approval Time",
+                    },
+					{
+                        field: "Deleted",
+                        title: "Deleted",
+                    },
+					{
+                        field: "ApprovalMessage",
+                        title: "Approval Message",
+                    },
+					{
+                        field: "StatusTechnical",
+                        title: "Status Technical",
+                    },
+					{
+                        field: "ScurveData",
+                        title: "Scurve Data",
+                    },
+					{
+                        field: "CompanyName",
+                        title: "Company Name",
+                    },
+					{
+                        field: "ContractorName",
+                        title: "Contractor Name",
+                    },
+					{
+                        field: "ProjectName",
+                        title: "Project Name",
+                    },
+                    {
+                        command: [
+                            {
+                                name: "edit",
+                                text: "edit",
+                                click: editItem,
+                                imageClass: "glyphicon glyphicon-edit",
+                                template: '<a class="k-button-icon #=className#" #=attr# href="\\#"><span class="#=imageClass#"></span></a>'
+                            },
+                            {
+                                name: "delete",
+                                text: "delete",
+                                click: deleteItem,
+                                imageClass: "glyphicon glyphicon-remove",
+                                template: '<a class="k-button-icon #=className#" #=attr# href="\\#"><span class="#=iconClass# #=imageClass#"></span></a>'
+                            }
+                        ],
+                        width: "90px"
+                    }
+                ],
+            });
+        });
+    </script>
+}
+

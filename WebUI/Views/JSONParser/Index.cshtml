@@ -1,0 +1,82 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <form>
+            <div class="row">
+                <label for="firstname">First Name :</label>
+                <input type="text" name="firstname" id="firstname" />
+            </div>
+            <div class="row">
+                <label for="username">Username :</label>
+                <input type="text" name="username" id="username" />
+                <label for="password">Password :</label>
+                <input type="password" name="psw" id="password" />
+            </div>
+            <div class="row">
+                <label for="gender">Gender :</label>
+                <input type="radio" name="sex" value="male" /> Male
+                <input type="radio" name="sex" value="female" checked /> Female
+            </div>
+            <div class="row">
+                <label for="preference">Preferences :</label>
+                <input type="checkbox" name="vehicle" value="0" /> Bike
+                <input type="checkbox" name="vehicle" value="1" /> Car
+                <input type="checkbox" name="vehicle" value="2" /> Ship
+                <input type="checkbox" name="vehicle" value="3" /> Airplane
+            </div>
+           
+            <div class="row">
+                <label for="hobby">Hobby :</label>
+                <select>
+                    <option value="0">Reading</option>
+                    <option value="1">Swimming</option>
+                    <option value="2">Sky Diving</option>
+                    <option value="3">Racing</option>
+                </select>
+            </div>
+            <div class="row">
+                <input type="hidden" />
+                <textarea>Test</textarea>
+            </div>
+            @*<div class="row">
+                <table>
+                    <tr>
+                        <th></th>
+                        <th scope="col">header1</th>
+                        <th scope="col">header2</th>
+                        <th scope="col">header3</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">header 1</th>
+                        <td><input type="text" value="aa" data-table-input="true" /></td>
+                        <td><input type="text" value="bb" data-table-input="true" /></td>
+                        <td><input type="text" value="cc" data-table-input="true" /></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">header 2</th>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">header 3</th>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                    </tr>
+                </table>
+            </div>*@
+        </form>
+    </div>
+</body>
+</html>

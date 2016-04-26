@@ -1,0 +1,65 @@
+﻿@model WebUI.Models.Crew.CrewAdminWhitelistFormStub
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    string currentController = (string)ViewContext.RouteData.Values["controller"];
+    string currentAction = (string)ViewContext.RouteData.Values["action"];
+    string backLink = "";
+
+    if (currentAction == "CreateCrewWhitelist")
+    {
+        ViewBag.Title = "Add Crew Date";
+    }
+    else
+    {
+        ViewBag.Title = ViewBag.name + "Edit";
+    }
+    
+    backLink = Url.Action("IndexAdminWhitelist");
+}
+
+<div class="page-header">
+    <h1>@ViewBag.Title</h1>
+</div>
+@using (@Html.BeginForm(currentAction, currentController, FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(model => model.id)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.barcode, new { @class = "col-xs-2 control-label" })
+        <div class="col-xs-4">
+            @Html.EditorFor(model => model.barcode, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.barcode)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.startDate, new { @class = "col-xs-2 control-label" })
+        <div class="col-xs-4">
+            @Html.EditorFor(model => model.startDate, new { htmlAttributes = new { @class = "form-control-datepicker" } })
+            @Html.ValidationMessageFor(model => model.startDate)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.endDate, new { @class = "col-xs-2 control-label" })
+        <div class="col-xs-4">
+            @Html.EditorFor(model => model.endDate, new { htmlAttributes = new { @class = "form-control-datepicker" } })
+            @Html.ValidationMessageFor(model => model.endDate)
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-xs-offset-2 col-xs-10">
+            <button type="submit" class="btn btn-primary">Save</button>
+            <a href="@backLink" class="btn btn-link">Cancel</a>
+        </div>
+    </div>
+}
+
+@section scripts
+    {
+    <script type="text/javascript">
+		// scripts here
+    </script>
+}
+
+
+

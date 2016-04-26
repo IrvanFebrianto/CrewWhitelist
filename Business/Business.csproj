@@ -1,0 +1,415 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9F43EB24-78BB-49C9-9017-37854F721BE6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Business</RootNamespace>
+    <AssemblyName>Business</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework6.Npgsql, Version=3.0.3.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework6.Npgsql.3.0.3\lib\net45\EntityFramework6.Npgsql.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Npgsql, Version=3.0.3.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Npgsql.3.0.3\lib\net45\Npgsql.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstract\IActionRepository.cs" />
+    <Compile Include="Abstract\ICrewWhitelistRepository.cs" />
+    <Compile Include="Abstract\ICrewRepository.cs" />
+    <Compile Include="Abstract\IUserRepository.cs" />
+    <Compile Include="Abstract\IContractorRepository.cs" />
+    <Compile Include="Abstract\ICurrencyRepository.cs" />
+    <Compile Include="Abstract\ILogRepository.cs" />
+    <Compile Include="Abstract\IModuleRepository.cs" />
+    <Compile Include="Abstract\IModulesInRoleRepository.cs" />
+    <Compile Include="Abstract\IMProjectRepository.cs" />
+    <Compile Include="Abstract\IProjectRepository.cs" />
+    <Compile Include="Abstract\IRoleRepository.cs" />
+    <Compile Include="Concrete\EFActionRepository.cs" />
+    <Compile Include="Concrete\EFCrewWhitelistRepository.cs" />
+    <Compile Include="Concrete\EFCrewRepository.cs" />
+    <Compile Include="Concrete\EFUserRepository.cs" />
+    <Compile Include="Concrete\EFContractorRepository.cs" />
+    <Compile Include="Concrete\EFCurrencyRepository.cs" />
+    <Compile Include="Concrete\EFLogRepository.cs" />
+    <Compile Include="Concrete\EFModuleRepository.cs" />
+    <Compile Include="Concrete\EFModulesInRoleRepository.cs" />
+    <Compile Include="Concrete\EFMProjectRepository.cs" />
+    <Compile Include="Concrete\EFProjectRepository.cs" />
+    <Compile Include="Concrete\EFRoleRepository.cs" />
+    <Compile Include="Entities\account.cs" />
+    <Compile Include="Entities\Action.cs">
+      <DependentUpon>UserManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\action_plan_progress.cs">
+      <DependentUpon>PMOEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Application.cs">
+      <DependentUpon>UserManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\CompanyPartial.cs" />
+    <Compile Include="Entities\company_user.cs">
+      <DependentUpon>PMOEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\contractor.cs">
+      <DependentUpon>PMOEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\crew.cs">
+      <DependentUpon>User.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\crew_whitelist.cs">
+      <DependentUpon>User.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\fid_item.cs">
+      <DependentUpon>PMOEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\incident_report.cs">
+      <DependentUpon>PMOEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\leading_indicator.cs">
+      <DependentUpon>PMOEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\LogPartial.cs" />
+    <Compile Include="Entities\currency.cs" />
+    <Compile Include="Entities\log.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Model.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Model.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\m_investment.cs">
+      <DependentUpon>PMOEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\m_investment_actual.cs">
+      <DependentUpon>PMOEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\m_investment_prognosis.cs">
+      <DependentUpon>PMOEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\m_investment_prognosis_period.cs">
+      <DependentUpon>PMOEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\m_project.cs">
+      <DependentUpon>PMOEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\m_project_gallery.cs">
+      <DependentUpon>PMOEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\m_project_under_study.cs">
+      <DependentUpon>PMOEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\m_project_under_study_task.cs">
+      <DependentUpon>PMOEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\m_rca.cs">
+      <DependentUpon>PMOEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\m_task.cs">
+      <DependentUpon>PMOEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\m_task_progress.cs">
+      <DependentUpon>PMOEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\m_task_recovery.cs">
+      <DependentUpon>PMOEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\m_task_recovery_schedule.cs">
+      <DependentUpon>PMOEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\m_task_schedule.cs">
+      <DependentUpon>PMOEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\outcome.cs">
+      <DependentUpon>PMOEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\PMOEntities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PMOEntities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\PMOEntities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PMOEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\PMOEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PMOEntities.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\project.cs">
+      <DependentUpon>PMOEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\project_display.cs">
+      <DependentUpon>PMOEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\project_gallery.cs">
+      <DependentUpon>PMOEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\project_notes.cs">
+      <DependentUpon>PMOEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\project_under_study.cs">
+      <DependentUpon>PMOEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\project_under_study_task.cs">
+      <DependentUpon>PMOEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\rca_template.cs">
+      <DependentUpon>PMOEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\task.cs">
+      <DependentUpon>PMOEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\task_activity.cs">
+      <DependentUpon>PMOEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\task_progress.cs">
+      <DependentUpon>PMOEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\task_recovery.cs">
+      <DependentUpon>PMOEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\task_recovery_schedule.cs">
+      <DependentUpon>PMOEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\task_schedule.cs">
+      <DependentUpon>PMOEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\User.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>User.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\User.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>User.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\User1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>User.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\UserPartial.cs" />
+    <Compile Include="Entities\ProfilePartial.cs" />
+    <Compile Include="Entities\MembershipPartial.cs" />
+    <Compile Include="Entities\Membership.cs">
+      <DependentUpon>UserManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Module.cs">
+      <DependentUpon>UserManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\ModulePartial.cs" />
+    <Compile Include="Entities\MobidigUser.cs" />
+    <Compile Include="Entities\AccountPartial.cs" />
+    <Compile Include="Entities\ModulesInRole.cs">
+      <DependentUpon>UserManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Profile.cs">
+      <DependentUpon>UserManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Role.cs">
+      <DependentUpon>UserManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\User.cs">
+      <DependentUpon>UserManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\UserManagement.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserManagement.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\UserManagement.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\UserManagement.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserManagement.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\user_role.cs">
+      <DependentUpon>User.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\weather.cs">
+      <DependentUpon>PMOEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\weekly_hse.cs">
+      <DependentUpon>PMOEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\weekly_rca.cs">
+      <DependentUpon>PMOEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\weekly_report.cs">
+      <DependentUpon>PMOEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\FilterInfo.cs" />
+    <Compile Include="Infrastructure\GridHelper.cs" />
+    <Compile Include="Infrastructure\SortingInfo.cs" />
+    <Compile Include="Linq\DynamicQueryable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="Entities\UserManagement.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>UserManagement.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="Entities\Model.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="CodeTemplates\Scaffolders\EntitiesRepo\EFEntitiesRepoTemplate.cs.t4" />
+    <None Include="CodeTemplates\Scaffolders\EntitiesRepo\EntitiesRepo.ps1" />
+    <None Include="CodeTemplates\Scaffolders\EntitiesRepo\IEntitiesRepoTemplate.cs.t4" />
+    <None Include="Entities\Model.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model.edmx</DependentUpon>
+      <LastGenOutput>Model.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Entities\Model.edmx.diagram">
+      <DependentUpon>Model.edmx</DependentUpon>
+    </None>
+    <None Include="Entities\Model.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model.edmx</DependentUpon>
+      <LastGenOutput>Model.cs</LastGenOutput>
+    </None>
+    <EntityDeploy Include="Entities\PMOEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PMOEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Entities\PMOEntities.edmx.diagram">
+      <DependentUpon>PMOEntities.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="Entities\User.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>User.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Entities\User.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>User.edmx</DependentUpon>
+      <LastGenOutput>User.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Entities\User.edmx.diagram">
+      <DependentUpon>User.edmx</DependentUpon>
+    </None>
+    <None Include="Entities\User.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>User.edmx</DependentUpon>
+      <LastGenOutput>User1.cs</LastGenOutput>
+    </None>
+    <None Include="Entities\UserManagement.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>UserManagement.edmx</DependentUpon>
+      <LastGenOutput>UserManagement.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Entities\UserManagement.edmx.diagram">
+      <DependentUpon>UserManagement.edmx</DependentUpon>
+    </None>
+    <None Include="Entities\UserManagement.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>UserManagement.edmx</DependentUpon>
+      <LastGenOutput>UserManagement.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common.Enums\Common.Enums.csproj">
+      <Project>{a54cd331-2a18-4015-b7d0-bc8483605885}</Project>
+      <Name>Common.Enums</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Extension\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Entities\PMOEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PMOEntities.edmx</DependentUpon>
+      <LastGenOutput>PMOEntities.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Entities\PMOEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PMOEntities.edmx</DependentUpon>
+      <LastGenOutput>PMOEntities.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

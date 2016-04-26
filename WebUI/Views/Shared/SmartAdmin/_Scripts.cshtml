@@ -1,0 +1,23 @@
+﻿@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/jqueryui")
+@Scripts.Render("~/scripts/smartadmin")
+@Scripts.Render("~/bundles/bootstrap")
+@Scripts.Render("~/bundles/kendo")
+@Scripts.Render("~/bundles/sweet-alert")
+@Scripts.Render("~/bundles/webapp")
+
+<!-- DO NOT REMOVE : GLOBAL FUNCTIONS! -->
+<script>
+    $(document).ready(function () {
+        pageSetUp();
+        drawBreadCrumb();
+    });
+</script>
+
+@if (@Model is HelperResult)
+{
+    @Model
+}
+
+<!-- Your GOOGLE ANALYTICS CODE Below-->
+

@@ -1,0 +1,123 @@
+@model WebUI.Models.MProject.MProjectImportExcelStub
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    string currentController = (string)ViewContext.RouteData.Values["controller"];
+    string currentAction = (string)ViewContext.RouteData.Values["action"];
+    string backLink = "";
+
+
+   ViewBag.Title = "Upload Excel M Project";
+    backLink = Url.Action("Index");
+}
+
+<div class="page-header">
+    <h1>@ViewBag.Title</h1>
+</div>
+@using (@Html.BeginForm(currentAction, currentController, FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    @Html.ValidationSummary(true)
+<div class="row">
+        <div class="col-xs-6">
+            <div class="form-group">
+		        @Html.LabelFor(model => model.ExcelFilePath, new { @class = "col-xs-4 control-label" })
+		        <div class="col-xs-8">
+                    @Html.HiddenFor(model => model.ExcelFilePath)
+                    @Html.TextBox("files", "", new { type = "file", id = "KendoUploader" })
+                    @Html.ValidationMessageFor(model => model.ExcelFilePath)
+		        </div>
+	        </div>
+    
+            <div class="form-group top15">
+		        <div class="col-xs-offset-4 col-xs-8">
+				    <a href="javascript:" class="btn btn-danger" onclick="downloadTemplate()">Download Template</a>
+			        <button type="submit" class="btn btn-primary">Upload</button>
+			        <a href="@backLink" class="btn btn-link">Cancel</a>
+		        </div>
+	        </div>
+        </div>
+         <div class="col-xs-6" style="height:250px; overflow:auto">
+             @{
+                if(ViewBag.MessageList != null){
+                    <p>Upload Excel Status: </p>
+                    List<string> msg = (List<string>)ViewBag.MessageList;
+                    if (msg.Count == 0)
+                    {
+                        <p>Upload succeeded.</p>
+                    }
+                    else
+                    {
+                        <p>Upload failed with the following error(s), please revise and reupload the file.</p>
+                        foreach(string data  in msg)
+                        {
+                            <p>@data</p>
+                        }
+                    }
+                    
+                }
+            }   
+        </div>
+    </div>
+}
+
+@section scripts
+    {
+    <script type="text/javascript">
+		var inputFileSelector = "#ExcelFilePath";
+
+    //download template sesuai perusahaan yang dipilih
+    function downloadTemplate() {
+        window.open('@Url.Action("GetExcelTemplate")');
+    }
+
+    //FILE RELATED
+    function onRemove(e) {
+        $(inputFileSelector).val("");
+    }
+
+    function onSelectFile(e) {
+        var flagExtension = 0;
+        var flagSize = 0;
+        var allowedExtension = [".xlsx"];
+        var file = e.files;
+
+        if (file[0].size > 10485760) {
+            flagSize = 1;
+        }
+
+        if ($.inArray((file[0].extension).toLowerCase(), allowedExtension) === -1) {
+            flagExtension = 1;
+        }
+
+        if (flagExtension == 1) {
+            alert("Only .xlsx files are allowed");
+            e.preventDefault();
+        }
+        if (flagSize == 1) {
+            alert("File size cannot exceed 10 MB");
+            e.preventDefault();
+        }
+
+    }
+
+    function onSuccessFile(e) {
+        var filepath = e.response.filepath;
+        $(inputFileSelector).val(filepath);
+    }
+
+    $(document).ready(function () {
+        $("#KendoUploader").kendoUpload({
+            multiple: false,
+            async: {
+                saveUrl: "@Url.Action("Save", "FileManagement", new { area = "" })",
+                removeUrl: "@Url.Action("Remove", "FileManagement", new { area = "" })",
+                autoUpload: true
+            },
+            select: onSelectFile,
+            success: onSuccessFile,
+            remove: onRemove
+        });
+
+    });
+    </script>
+}
+
