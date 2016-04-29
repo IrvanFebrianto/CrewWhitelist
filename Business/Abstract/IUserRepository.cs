@@ -17,5 +17,7 @@ namespace Business.Abstract
         int Count(FilterInfo filters = null);
         void Save(user_role dbItem);
         void Delete(user_role dbItem);
+        //bool checkLogin(string username, string password);
+        //bool logOut();
 	}
 }

@@ -1,14 +1,19 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using System.Web.Script.Serialization;
+using WebUI.Infrastructure;
+using WebUI.Infrastructure.Abstract;
 using WebUI.Models;
 using WebUI.Controllers;
-using WebUI.Infrastructure;
 using WebUI.Extension;
 using MvcSiteMapProvider;
 using MvcSiteMapProvider.Web.Mvc.Filters;
@@ -18,7 +23,7 @@ using WebUI.Models.Crew;
 
 namespace WebUI.Controllers
 {
-    public class CrewController : MyController
+    public class CrewController : Controller
     {
 		private ICrewRepository RepoCrew;
         private ICrewWhitelistRepository RepoCrewWhitelist;
@@ -26,7 +31,6 @@ namespace WebUI.Controllers
         private crew_whitelistEntities context = new crew_whitelistEntities();
 
         public CrewController(ICrewRepository repoCrew, ICrewWhitelistRepository repoCrewWhitelist,ILogRepository repoLog)
-			: base(repoLog)
         {
             RepoCrew = repoCrew;
             RepoCrewWhitelist = repoCrewWhitelist;
@@ -35,16 +39,19 @@ namespace WebUI.Controllers
 
 		//[MvcSiteMapNode(Title = "Contractor", ParentKey = "Dashboard",Key="IndexContractor")]
 		//[SiteMapTitle("Breadcrumb")]
+        [AuthorizeRole(Roles="admin")]
         public ActionResult IndexAdmin()
         {
             return View();
         }
 
+        [AuthorizeRole(Roles = "adminwhitelist")]
         public ActionResult IndexAdminWhitelist()
         {
             return View();
         }
 
+        [AuthorizeRole(Roles = "admin")]
         public string BindingCrew()
         {
             //kamus
@@ -56,6 +63,7 @@ namespace WebUI.Controllers
             return new JavaScriptSerializer().Serialize(new { total = total, data = new CrewAdminPresentationStub().MapList(items) });
         }
 
+        [AuthorizeRole(Roles = "adminwhitelist")]
         public string BindingCrewWhitelist()
         {
             //kamus
@@ -67,6 +75,7 @@ namespace WebUI.Controllers
             return new JavaScriptSerializer().Serialize(new { total = total, data = new CrewAdminWhitelistPresentationStub().MapList(items) });
         }
 
+        [AuthorizeRole(Roles = "adminwhitelist")]
         public string BindingCrewWhitelistToday()
         {
             //kamus
@@ -89,6 +98,7 @@ namespace WebUI.Controllers
 
 		//[MvcSiteMapNode(Title = "Create", ParentKey = "IndexContractor")]
 		//[SiteMapTitle("Breadcrumb")]
+        [AuthorizeRole(Roles = "admin")]
         public ActionResult CreateCrew()
         {
 			
@@ -97,6 +107,7 @@ namespace WebUI.Controllers
             return View("FormAdmin", formStub);
         }
 
+        [AuthorizeRole(Roles = "admin")]
         [HttpPost]
 		//[SiteMapTitle("Breadcrumb")]
         public ActionResult CreateCrew(CrewAdminFormStub model)
@@ -140,6 +151,7 @@ namespace WebUI.Controllers
 
 		//[MvcSiteMapNode(Title = "Edit", ParentKey = "IndexContractor", Key = "EditContractor", PreservedRouteParameters = "id")]
 		//[SiteMapTitle("Breadcrumb")]
+        [AuthorizeRole(Roles = "admin")]
         public ActionResult EditCrew(string barcode)
         {
             crew crew = RepoCrew.FindByPk(barcode);
@@ -147,6 +159,7 @@ namespace WebUI.Controllers
             return View("FormAdmin", FormAdminStub);
         }
 
+        [AuthorizeRole(Roles = "admin")]
         [HttpPost]
 		//[SiteMapTitle("Breadcrumb")]
         public ActionResult EditCrew(CrewAdminFormStub model)
@@ -180,6 +193,7 @@ namespace WebUI.Controllers
             }
         }
 
+        [AuthorizeRole(Roles = "admin")]
 		[HttpPost]
 		public JsonResult DeleteCrew(string barcode)
         {
@@ -192,6 +206,7 @@ namespace WebUI.Controllers
             return Json(response);
         }
 
+        [AuthorizeRole(Roles = "adminwhitelist")]
         public ActionResult CreateCrewWhitelist()
         {
 
@@ -200,6 +215,7 @@ namespace WebUI.Controllers
             return View("FormAdminWhitelist", formStub);
         }
 
+        [AuthorizeRole(Roles = "adminwhitelist")]
         [HttpPost]
         //[SiteMapTitle("Breadcrumb")]
         public ActionResult CreateCrewWhitelist(CrewAdminWhitelistFormStub model)
@@ -234,6 +250,7 @@ namespace WebUI.Controllers
 
         //[MvcSiteMapNode(Title = "Edit", ParentKey = "IndexAdminWhitelistContractor", Key = "EditContractor", PreservedRouteParameters = "id")]
         //[SiteMapTitle("Breadcrumb")]
+        [AuthorizeRole(Roles = "adminwhitelist")]
         public ActionResult EditCrewWhitelist(int id)
         {
             crew_whitelist crew = RepoCrewWhitelist.FindByPk(id);
@@ -241,6 +258,7 @@ namespace WebUI.Controllers
             return View("FormAdminWhitelist", FormAdminWhitelistStub);
         }
 
+        [AuthorizeRole(Roles = "adminwhitelist")]
         [HttpPost]
         //[SiteMapTitle("Breadcrumb")]
         public ActionResult EditCrewWhitelist(CrewAdminWhitelistFormStub model)
@@ -273,6 +291,7 @@ namespace WebUI.Controllers
             }
         }
 
+        [AuthorizeRole(Roles = "adminwhitelist")]
         [HttpPost]
         public JsonResult DeleteCrewWhitelist(int id)
         {
@@ -285,48 +304,54 @@ namespace WebUI.Controllers
             return Json(response);
         }
 
-        public ActionResult Login()
-        {
-            return View();
-        }
+        //[AllowAnonymous]
+        //public ActionResult Login()
+        //{
+        //    return View();
+        //}
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Login(LoginModel u)
-        {
-            if (ModelState.IsValid)
-            {
-                using (crew_whitelistEntities user = new crew_whitelistEntities())
-                {
-                    var v = user.user_role.Where(a => a.username.Equals(u.Username) && a.password.Equals(u.Password)).FirstOrDefault();
-                    if (v != null)
-                    {
-                        Session["logedUserID"] = v.id.ToString();
-                        Session["logedUserName"] = v.username.ToString();
-                        if (v.role.Equals("admin"))
-                        {
-                            return View("IndexAdmin");
-                        }
-                        else
-                        {
-                            return View("IndexAdminWhitelist");
-                        }
-                    }
+        //[AllowAnonymous]
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Login(LoginModel u)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        using (crew_whitelistEntities user = new crew_whitelistEntities())
+        //        {
+        //            var v = user.user_role.Where(a => a.username.Equals(u.Username) && a.password.Equals(u.Password)).FirstOrDefault();
+        //            if (v != null)
+        //            {
+        //                Session["logedUserID"] = v.id.ToString();
+        //                Session["logedUserName"] = v.username.ToString();
+        //                if (v.role.Equals("admin"))
+        //                {
+        //                    //return View("IndexAdmin");
+        //                    return RedirectToAction("IndexAdmin");
+        //                }
+        //                else
+        //                {
+        //                    //return View("IndexAdminWhitelist");
+        //                    return RedirectToAction("IndexAdminWhitelist");
+        //                }
+        //            }
 
-                }
-            }
-            else{
-                ModelState.AddModelError("","Login Failed");
-                
-            }
-            return View();
-            
-        }
+        //        }
+        //    }
+        //    else
+        //    {
+        //        ModelState.AddModelError("", "Login Failed");
 
-        public ActionResult LogOut()
-        {
-            return View("Login");
-        }
+        //    }
+        //    return View();
+
+        //}
+
+        //[AllowAnonymous]
+        //public ActionResult LogOut()
+        //{
+        //    return View("Login");
+        //}
 
 	}
 }

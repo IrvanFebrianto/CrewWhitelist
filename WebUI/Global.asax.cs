@@ -49,31 +49,54 @@ namespace WebUI
 
         protected void Application_PostAuthenticateRequest(Object sender, EventArgs e)
         {
-            HttpCookie authCookie = Request.Cookies[FormsAuthentication.FormsCookieName];
+            //HttpCookie authCookie = Request.Cookies[FormsAuthentication.FormsCookieName];
 
-            if (authCookie != null)
+            //if (authCookie != null)
+            //{
+            //    try
+            //    {
+            //        FormsAuthenticationTicket authTicket = FormsAuthentication.Decrypt(authCookie.Value);
+
+            //        JavaScriptSerializer serializer = new JavaScriptSerializer();
+
+            //        CustomPrincipalSerializeModel serializeModel = serializer.Deserialize<CustomPrincipalSerializeModel>(authTicket.UserData);
+
+            //        CustomPrincipal newUser = new CustomPrincipal(authTicket.Name);
+            //        newUser.Modules = serializeModel.Modules;
+
+            //        HttpContext.Current.User = newUser;
+            //    }
+            //    catch
+            //    {
+            //        FormsAuthentication.SignOut();
+            //        Response.Redirect(FormsAuthentication.LoginUrl, true);
+            //    }
+
+            //}
+        }
+
+        protected void Application_AuthenticateRequest(Object sender, EventArgs e)
+        {
+            if (HttpContext.Current.User != null)
             {
-				try
-				{
-					FormsAuthenticationTicket authTicket = FormsAuthentication.Decrypt(authCookie.Value);
-
-					JavaScriptSerializer serializer = new JavaScriptSerializer();
-
-					CustomPrincipalSerializeModel serializeModel = serializer.Deserialize<CustomPrincipalSerializeModel>(authTicket.UserData);
-
-					CustomPrincipal newUser = new CustomPrincipal(authTicket.Name);
-					newUser.Modules = serializeModel.Modules;
-
-					HttpContext.Current.User = newUser;
-				}
-				catch
-				{
-					FormsAuthentication.SignOut();
-                    Response.Redirect(FormsAuthentication.LoginUrl, true);
-				}
-                
+                if (HttpContext.Current.User.Identity.IsAuthenticated)
+                {
+                    if (HttpContext.Current.User.Identity is FormsIdentity)
+                    {
+                        // Get Forms Identity From Current User
+                        FormsIdentity id = (FormsIdentity)HttpContext.Current.User.Identity;
+                        // Get Forms Ticket From Identity object
+                        FormsAuthenticationTicket ticket = id.Ticket;
+                        // Retrieve stored user-data (our roles from db)
+                        string userData = ticket.UserData;
+                        string[] roles = userData.Split(',');
+                        // Create a new Generic Principal Instance and assign to Current User
+                        HttpContext.Current.User = new GenericPrincipal(id, roles);
+                    }
+                }
             }
         }
+
 
         //protected void Application_PreRequestHandlerExecute(object sender, EventArgs e)
         //{

@@ -96,6 +96,16 @@ namespace Business.Concrete
             context.SaveChanges();
         }
 
+        //public bool checkLogin(string username, string password)
+        //{
+        //    return context.user_role.SingleOrDefault(c => c.username.Equals(username) && c.password.Equals(password))!=null;
+        //}
+
+        //public bool logOut()
+        //{
+        //    return true;
+        //}
+
         #endregion
 	}
 }

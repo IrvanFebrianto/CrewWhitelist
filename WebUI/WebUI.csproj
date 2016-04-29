@@ -285,9 +285,11 @@
     <Compile Include="Areas\SecurityGuard\Models\SelectObject.cs" />
     <Compile Include="Areas\SecurityGuard\Models\UserViewModel.cs" />
     <Compile Include="Areas\SecurityGuard\SecurityGuardAreaRegistration.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Binders\UserLoginModelBinder.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DataContext.cs" />
     <Compile Include="Controllers\CrewController\CrewController.cs" />
     <Compile Include="Controllers\ContractorController.cs" />
     <Compile Include="Controllers\CurrencyController.cs" />
@@ -309,6 +311,7 @@
     <Compile Include="Infrastructure\Abstract\IObjectExtender.cs" />
     <Compile Include="Infrastructure\Abstract\IProvidePrincipal.cs" />
     <Compile Include="Infrastructure\ApiCredential.cs" />
+    <Compile Include="Infrastructure\AuthorizeRoleAttribute.cs" />
     <Compile Include="Infrastructure\AuthorizeUserAttribute.cs" />
     <Compile Include="Infrastructure\BasicAuthMessageHandler.cs" />
     <Compile Include="Infrastructure\Concrete\CustomPrincipal.cs" />
@@ -464,6 +467,7 @@
     <Compile Include="Models\CurrencyFormStub.cs" />
     <Compile Include="Models\CurrencyPresentationStub.cs" />
     <Compile Include="Models\ErrorPageViewModel.cs" />
+    <Compile Include="Models\LoginCrewModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\LogOnViewModel.cs" />
     <Compile Include="Models\LogPresentationStub.cs" />
@@ -1185,7 +1189,7 @@
     <Content Include="Views\Shared\DisplayTemplates\DateTimeOffset.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\DateTime.cshtml" />
     <Content Include="Views\Error\Forbidden.cshtml" />
-    <Content Include="Views\Crew\Login.cshtml" />
+    <Content Include="Views\User\Login.cshtml" />
     <Content Include="Views\Crew\FormAdmin.cshtml" />
     <Content Include="Views\Crew\IndexAdmin.cshtml" />
     <Content Include="Views\Crew\IndexAdminWhitelist.cshtml" />

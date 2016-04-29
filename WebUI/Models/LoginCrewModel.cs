@@ -6,7 +6,7 @@ using System.Web;
 
 namespace WebUI.Models
 {
-    public class LoginModel
+    public class LoginCrewModel
     {
         [Required]
         [Display(Name = "User Name")]
@@ -16,6 +16,8 @@ namespace WebUI.Models
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
         public string Password { get; set; }
+
+        [Display(Name = "Role")]
         public string Role { get; set; }
     }
 }
