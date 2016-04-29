@@ -1,13 +1,13 @@
 ﻿@model WebUI.Models.LoginCrewModel
 
 @{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
 
     var currentController = (WebUI.Controllers.UserController)ViewContext.Controller;
 
     ViewBag.Title = "Login";
 }
-<div class="page-header">
+<div>
     <h1>@ViewBag.Title</h1>
 </div>
 <div class="row">
@@ -16,7 +16,7 @@
     </div>
     <div class="col-xs-6">
         @Html.ValidationSummary(true, "Login was unsuccessful. Please correct the errors and try again.")
-        @using (@Html.BeginForm("Login","User",FormMethod.Post, new { @class = "form-horizontal" }))
+        @using (@Html.BeginForm("Login","User",new {ReturnUrl = ViewBag.ReturnUrl}, FormMethod.Post,new { @class = "form-horizontal" }))
         {
             @Html.AntiForgeryToken()
             <div class="form-group clearfix">

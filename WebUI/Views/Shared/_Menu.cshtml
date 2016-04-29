@@ -19,7 +19,7 @@
 		@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null )
 	</li>
     
-    if((User as WebUI.Infrastructure.Concrete.CustomPrincipal).HasAccess("Dashboard"))
+    @*if((User as WebUI.Infrastructure.Concrete.CustomPrincipal).HasAccess("Dashboard"))
     {
         currentClass = "";
         if((currentController == "Home") && (currentAction == "TestAuthorize"))
@@ -29,7 +29,7 @@
 	<li class="@currentClass">
 		@Html.ActionLink("Test Authorize", "TestAuthorize", "Home", new { area = "" }, null )
 	</li>
-    }
+    }*@
 
     currentClass = "";
     if (currentController == "Financial")

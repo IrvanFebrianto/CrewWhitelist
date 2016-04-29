@@ -1,6 +1,6 @@
 ﻿@model WebUI.Models.Crew.CrewAdminFormStub
 @{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
     string currentController = (string)ViewContext.RouteData.Values["controller"];
     string currentAction = (string)ViewContext.RouteData.Values["action"];
     string backLink = "";
@@ -16,7 +16,7 @@
     backLink = Url.Action("IndexAdmin");
 }
 
-<div class="page-header">
+<div>
     <h1>@ViewBag.Title</h1>
 </div>
 @using (@Html.BeginForm(currentAction, currentController, FormMethod.Post, new { @class = "form-horizontal" }))

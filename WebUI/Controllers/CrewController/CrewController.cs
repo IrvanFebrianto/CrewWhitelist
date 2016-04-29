@@ -51,7 +51,7 @@ namespace WebUI.Controllers
             return View();
         }
 
-        [AuthorizeRole(Roles = "admin")]
+        //[AuthorizeRole(Roles = "admin")]
         public string BindingCrew()
         {
             //kamus
@@ -63,7 +63,7 @@ namespace WebUI.Controllers
             return new JavaScriptSerializer().Serialize(new { total = total, data = new CrewAdminPresentationStub().MapList(items) });
         }
 
-        [AuthorizeRole(Roles = "adminwhitelist")]
+        //[AuthorizeRole(Roles = "adminwhitelist")]
         public string BindingCrewWhitelist()
         {
             //kamus
@@ -75,7 +75,7 @@ namespace WebUI.Controllers
             return new JavaScriptSerializer().Serialize(new { total = total, data = new CrewAdminWhitelistPresentationStub().MapList(items) });
         }
 
-        [AuthorizeRole(Roles = "adminwhitelist")]
+        //[AuthorizeRole(Roles = "adminwhitelist")]
         public string BindingCrewWhitelistToday()
         {
             //kamus
@@ -107,7 +107,7 @@ namespace WebUI.Controllers
             return View("FormAdmin", formStub);
         }
 
-        [AuthorizeRole(Roles = "admin")]
+        //[AuthorizeRole(Roles = "admin")]
         [HttpPost]
 		//[SiteMapTitle("Breadcrumb")]
         public ActionResult CreateCrew(CrewAdminFormStub model)
@@ -159,7 +159,7 @@ namespace WebUI.Controllers
             return View("FormAdmin", FormAdminStub);
         }
 
-        [AuthorizeRole(Roles = "admin")]
+        //[AuthorizeRole(Roles = "admin")]
         [HttpPost]
 		//[SiteMapTitle("Breadcrumb")]
         public ActionResult EditCrew(CrewAdminFormStub model)
@@ -193,7 +193,7 @@ namespace WebUI.Controllers
             }
         }
 
-        [AuthorizeRole(Roles = "admin")]
+        //[AuthorizeRole(Roles = "admin")]
 		[HttpPost]
 		public JsonResult DeleteCrew(string barcode)
         {
@@ -215,7 +215,7 @@ namespace WebUI.Controllers
             return View("FormAdminWhitelist", formStub);
         }
 
-        [AuthorizeRole(Roles = "adminwhitelist")]
+        //[AuthorizeRole(Roles = "adminwhitelist")]
         [HttpPost]
         //[SiteMapTitle("Breadcrumb")]
         public ActionResult CreateCrewWhitelist(CrewAdminWhitelistFormStub model)
@@ -258,7 +258,7 @@ namespace WebUI.Controllers
             return View("FormAdminWhitelist", FormAdminWhitelistStub);
         }
 
-        [AuthorizeRole(Roles = "adminwhitelist")]
+        //[AuthorizeRole(Roles = "adminwhitelist")]
         [HttpPost]
         //[SiteMapTitle("Breadcrumb")]
         public ActionResult EditCrewWhitelist(CrewAdminWhitelistFormStub model)
@@ -291,7 +291,7 @@ namespace WebUI.Controllers
             }
         }
 
-        [AuthorizeRole(Roles = "adminwhitelist")]
+        //[AuthorizeRole(Roles = "adminwhitelist")]
         [HttpPost]
         public JsonResult DeleteCrewWhitelist(int id)
         {

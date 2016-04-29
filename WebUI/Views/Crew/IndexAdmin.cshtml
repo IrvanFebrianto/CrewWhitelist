@@ -2,7 +2,7 @@
 @using MvcSiteMapProvider.Web.Html;
 @{
     ViewBag.Title = "Crew List";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
     var currentController = (WebUI.Controllers.CrewController)ViewContext.Controller;
 }
 <div class="page-header">
@@ -10,7 +10,7 @@
         @Html.ActionLink("Add Crew", "CreateCrew", new { area = "" }, new { @class = "btn btn-default" })
     </div>
     <div class="btn-group pull-right">
-        @Html.ActionLink("LogOut", "LogOut", new { area = "" }, new { @class = "btn btn-default" })
+        @Html.ActionLink("Logout", "Logout", "User",new { area = "" }, new { @class = "btn btn-default" })
     </div>
     <h1>@ViewBag.Title</h1>
 </div>
